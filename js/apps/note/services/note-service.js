@@ -54,28 +54,3 @@ function createNote() {
     },
   ];
 }
-
-//
-
-
-
-// return [
-//   {
-//     id: "n101",
-//     isPinned: false,
-//     info: {
-//       title: "test",
-//       labels: [""],
-//       txt: "Fullstack Me Baby!",
-//       imgUrl: "http://some-img/me",
-//       vidUrl: "http://some-vid/me",
-//       todos: [
-//         { txt: "Driving liscence", doneAt: null },
-//         { txt: "Coding power", doneAt: 187111111 },
-//       ],
-//     },
-//     style: {
-//       backgroundColor: "#00d",
-//     },
-//   },
-// ];

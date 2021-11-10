@@ -1,23 +1,24 @@
 export default {
   props: ["note"],
   template: `
-    <section>
-        <div class="note-list-container">
-            <div v-if="isNoteTxt">
-             <p>{{note.info.txt}}</p>
+    <section class="note-preview-each-note">
+            <div class="note-preview-txt" v-if="isNoteTxt">
+             <div>{{note.info.txt}}</div>
             </div>
-            <div v-if="isNoteImg">
-                <p>{{note.info.title}}</p>
-            <img :src="note.info.url"/>
+
+            <div class="note-preview-img" v-if="isNoteImg">
+                <div class="note-preview-the-img">
+                    <div>{{note.info.title}}</div>
+                    <img :src="note.info.url"/>
+                </div>
             </div>
-            <div v-if="isNoteTodos">   
-                        <p>{{note.info.title}}</p>
+
+            <div class="note-preview-todos" v-if="isNoteTodos">   
+                        <div>{{note.info.title}}</div>
                 <ul v-for="todo in note.info.todos">
                     <li>{{todo.txt}} {{todo.doneAt}}</li>
                 </ul>
             </div>
-    </div>       
-    </div>
     </section>
     `,
   data() {

@@ -1,4 +1,13 @@
+
+/* IMPORTS CMPS*/
 @import '../css/apps/mail/cmp/mail-preview.css';
+@import '../css/apps/keep/cmp/note-preview.css';
+@import './apps/keep/cmp/note-list.css';
+@import './apps/keep/pages/note-app.css';
+/* IMPORST PAGES */
+
+
+
 
 * {
   box-sizing: border-box;
@@ -6,6 +15,7 @@
 
 body {
   margin: 0;
+  width: 100%;
 }
 
 /* main app */
@@ -36,25 +46,26 @@ body {
 }
 
 .app-header-nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: lightgray;
-    height: 80px;
-    padding: 0 20px;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lightgray;
+  height: 80px;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 .app-header-nav a {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .app-header-links{
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .app-header-links a{
-    margin: 0 10px;
+  margin: 0 10px;
 }
+

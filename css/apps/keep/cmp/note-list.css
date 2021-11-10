@@ -1,0 +1,22 @@
+.note-list-container {
+  display: flex;
+  /* background: green; */
+  width: 95%;
+
+  justify-content: center;
+}
+
+
+
+.note-list-notes {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 100%;
+  justify-content: flex-end;
+  min-height: 80vh;
+}
+.note-list-notes > * {
+  margin: 20px;
+}
+
+
