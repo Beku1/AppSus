@@ -1,17 +1,15 @@
 
 /* IMPORTS CMPS*/
 @import '../css/apps/mail/cmp/mail-preview.css';
-<<<<<<< HEAD
 @import '../css/apps/mail/pages/mail-details.css';
-=======
 @import '../css/apps/keep/cmp/note-preview.css';
 @import './apps/keep/cmp/note-list.css';
 @import './apps/keep/pages/note-app.css';
+
 /* IMPORST PAGES */
 
 
 
->>>>>>> 7ce999e14b5cea158e550a7828f4e5833e3016e4
 
 * {
   box-sizing: border-box;
