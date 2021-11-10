@@ -1,25 +1,30 @@
-import appHome from "./pages/app-home.cmp.js";
-import appAbout from "./pages/app-about.cmp.js";
-import mailApp from "./apps/mail/pages/mail-app.cmp.js"
+import appHome from './pages/app-home.cmp.js'
+import appAbout from './pages/app-about.cmp.js'
+import mailApp from './apps/mail/pages/mail-app.cmp.js'
 import mailDetails from './apps/mail/pages/mail-details.cmp.js'
-
+import noteAppCmp from './apps/note/pages/note-app.cmp.js'
 
 const routes = [
   {
-      path: '/',
-      component: appHome
+    path: '/',
+    component: appHome,
   },
   {
-      path: '/about',
-      component: appAbout
-  },{
-     path:'/mail',
-     component:mailApp
+    path: '/about',
+    component: appAbout,
   },
   {
-  path:'/mail/:mailId?',
-  component:mailDetails
-  }
+    path: '/mail',
+    component: mailApp,
+  },
+  {
+    path: '/mail/:mailId?',
+    component: mailDetails,
+  },
+  {
+    path: '/note',
+    component: noteAppCmp,
+  },
   // {
   //     path: '/books',
   //     component: bookApp
@@ -32,6 +37,6 @@ const routes = [
   //     path: '/books/:bookId?',
   //     component: bookDetials
   // },
-];
+]
 
-export const router = new VueRouter({ routes });
+export const router = new VueRouter({ routes })
