@@ -1,5 +1,7 @@
 import appHome from "./pages/app-home.cmp.js";
 import appAbout from "./pages/app-about.cmp.js";
+import mailApp from "./apps/mail/pages/mail-app.cmp.js"
+import mailDetails from './apps/mail/pages/mail-details.cmp.js'
 
 
 const routes = [
@@ -10,7 +12,14 @@ const routes = [
   {
       path: '/about',
       component: appAbout
+  },{
+     path:'/mail',
+     component:mailApp
   },
+  {
+  path:'/mail/:mailId?',
+  component:mailDetails
+  }
   // {
   //     path: '/books',
   //     component: bookApp

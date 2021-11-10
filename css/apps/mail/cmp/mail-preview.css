@@ -1,0 +1,31 @@
+.mail-preview{
+    width:100%;
+}
+
+.mail-preview-main{
+    width:800px;
+    background:255 255 255 1;
+    margin:0 10px;
+    border:1px solid black;
+    display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height:40px;
+     
+     
+}
+
+.mail-preview-main.unread{
+    font-weight: 900;
+
+}
+
+.mail-preview-txt{
+    
+    margin:10px;
+}
+.mail-preview-title{
+    
+    margin:10px;
+}
+

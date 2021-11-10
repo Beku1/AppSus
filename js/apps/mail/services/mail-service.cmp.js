@@ -1,20 +1,26 @@
-const email = {
-  id: "e101",
-  title: "Miss you!",
-  info: {
-    txt: "Fullstack Me Baby!",
-    imgUrl: "http://some-img/me",
-    vidUrl: "http://some-vid/me",
-    lables: ["important", "romantic"],
-  },
-  isRead: false,
-  isStared: false,
-  sentAt: 1551133930594,
-  to: "momo@momo.com",
-  status: "inbox || sent || trash || draft",
-};
+import {mails} from '../data/mails.js'
+import {user} from '../data/user.js'
+import { storageService } from '../../../services/async-storage-service.js'
+import { utilService } from '../../../services/utils-service.js'
 
-const loggedinUser = {
-  email: "user@appsus.com",
-  fullname: "Mahatma Appsus",
-};
+const MAILS_KEY = 'mails'
+const USER_KEY = 'user'
+_createMails()
+
+export const mailService = {
+ query,
+}
+
+
+function query(){
+  return storageService.query(MAILS_KEY)
+}
+
+function _createMails(){
+  let newMails = utilService.loadFromStorage(MAILS_KEY)
+  if(!newMails || !newMails.length){
+    newMails = mails
+    utilService.saveToStorage(MAILS_KEY,newMails)
+  }
+  return newMails
+}
