@@ -1,0 +1,6 @@
+.note-app-main{
+width: 100%;
+/* background-color: lightgray; */
+display: flex;
+justify-content: center;
+}

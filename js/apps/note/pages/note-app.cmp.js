@@ -12,7 +12,7 @@ export default {
     // bookAdd,
   },
   template: `
-        <div>
+        <div class="note-app-main">
             <note-list :notes="notes"></note-list>
         </div>
       `,
