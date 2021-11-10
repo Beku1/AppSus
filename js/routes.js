@@ -1,5 +1,6 @@
 import appHome from "./pages/app-home.cmp.js";
 import appAbout from "./pages/app-about.cmp.js";
+import noteAppCmp from "./apps/note/pages/note-app.cmp.js";
 
 
 const routes = [
@@ -11,6 +12,10 @@ const routes = [
       path: '/about',
       component: appAbout
   },
+  {
+    path:'/note',
+    component: noteAppCmp
+  }
   // {
   //     path: '/books',
   //     component: bookApp

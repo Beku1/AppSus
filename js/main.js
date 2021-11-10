@@ -1,3 +1,4 @@
+// import noteApp from "./apps/note/pages/note-app.cmp.js";
 import appHeader from "./cmps/app-header.cmp.js";
 import appFooter from "./cmps/app-footer.cmp.js";
 import { router } from "./routes.js";
@@ -8,6 +9,7 @@ const options = {
   components: {
     appHeader,
     appFooter
+    
   },
   template: `
     <section class="main">

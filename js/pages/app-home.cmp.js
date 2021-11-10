@@ -5,5 +5,5 @@ export default {
               <h1>Welcome To Appsus</h1>
             </div>
         </section>
-        `,
+      `,
 };
