@@ -1,0 +1,22 @@
+.mail-details-header{
+ display:flex;   
+ align-items: center;
+ justify-content: space-evenly;
+}
+
+.mail-details-from-to{
+    display:flex;
+    flex-direction: column;
+    padding:0 100px;
+}
+
+.mail-details-info{
+    display:flex;
+    align-items: center;
+    
+}
+
+.mail-details-body-img img{
+    width:400px;
+    height:400px;
+}

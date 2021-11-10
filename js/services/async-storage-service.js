@@ -2,11 +2,11 @@
 
 export const storageService = {
     query,
-    // get,
-    // post,
-    // put,
-    // remove,
-    // postMany
+    get,
+    post,
+    put,
+    remove,
+    postMany
 }
 
 function query(entityType) {

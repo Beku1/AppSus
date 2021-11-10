@@ -1,4 +1,5 @@
 @import '../css/apps/mail/cmp/mail-preview.css';
+@import '../css/apps/mail/pages/mail-details.css';
 
 * {
   box-sizing: border-box;

@@ -9,6 +9,8 @@ _createMails()
 
 export const mailService = {
  query,
+ getById,
+ removeMail
 }
 
 
@@ -23,4 +25,16 @@ function _createMails(){
     utilService.saveToStorage(MAILS_KEY,newMails)
   }
   return newMails
+}
+
+function getById(mailId){
+ return storageService.get(MAILS_KEY,mailId)
+}
+
+function removeMail(mail){
+  console.log(mail)
+  if(mail.status !== 'trash'){
+    return mail.status = 'trash'
+  } 
+ return storageService.remove(MAILS_KEY,mail.id)
 }

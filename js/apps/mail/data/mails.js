@@ -10,12 +10,13 @@ export const mails =[
       txt: "Fullstack Me Baby!",
       imgUrl: IMG_URL,
       vidUrl: VIDEO_URL,
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "you@are.amazaing.com",
+    from:"user@appsus.com",
     status: "inbox || sent || trash || draft",
    },
    {
@@ -24,12 +25,13 @@ export const mails =[
     info: {
       txt: "I heard about your wife and I believe you ddint kill her, there is no way you killed her in vegas while you were with me in new york that same day, hope you will feel better",
       
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "momo@momo.com",
+    frmo:"user@appsus.com",
     status: "inbox || sent || trash || draft",
   },
    {
@@ -39,12 +41,13 @@ export const mails =[
       txt: "So I know she is late with the payment just please dont kill her!",
       imgUrl: IMG_URL,
       
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: true,
     isStared: false,
     sentAt: 1551133930594,
-    to: "agent47@hitmans.com",
+    to: "user@appsus.com",
+    from:"agent47@hitmans.com",
     status: "inbox || sent || trash || draft",
   },
   {
@@ -54,12 +57,13 @@ export const mails =[
       txt: "I'm pretty sure my married lover is cheating on me on someone expect her husband... can you check up on her?",
       
       vidUrl: VIDEO_URL,
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "detective@realationships.com",
+    from:"user@appsus.com",
     status: "inbox || sent || trash || draft",
   },
   {
@@ -67,12 +71,13 @@ export const mails =[
     title: "I'm not crazy",
     info: {
       txt: "I AM INSANE!!!",
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "me@you.com",
+    from:"user@appsus.com",
     status: "inbox || sent || trash || draft",
   },
   {
@@ -81,12 +86,13 @@ export const mails =[
     info: {
       txt: "Everything above is a lie! ",
       
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
-    to: "you@me.com",
+    to: "user@appsus.com",
+    from:"you@me.com",
     status: "inbox || sent || trash || draft",
   },
   {
@@ -96,12 +102,13 @@ export const mails =[
       txt: "If you read everything in your email , you realize you hacked into an insane person's email , just watch out from having leaving own \'Foot Prints\' . Here is a cute picture ",
       imgUrl: IMG_URL,
       vidUrl: VIDEO_URL,
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "idk@isitrue.com",
+    from:"user@appsus.com",
     status: "inbox || sent || trash || draft",
   },
   {
@@ -111,12 +118,13 @@ export const mails =[
       txt: "Fullstack Me Baby!",
       imgUrl: "http://some-img/me",
       vidUrl: "http://some-vid/me",
-      lables: ["important", "romantic"],
+      labels: ["important", "romantic"],
     },
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
     to: "test@test.com",
+    from:"user@appsus.com",
     status: "inbox || sent || trash || draft",
   }
   
