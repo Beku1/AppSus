@@ -8,7 +8,7 @@ export default {
       
         <div class="note-list-notes">
     <div v-for ="note in notes">
-    <note-preview :note="note"></note-preview>
+    <note-preview @getNewNote="getRenewNote" :note="note"></note-preview>
     </div>
     </div>
     </section>
@@ -17,6 +17,11 @@ export default {
     return {
       note: null,
     };
+  },
+  methods: {
+    getRenewNote(note) {
+      this.$emit("getNote",note);
+    },
   },
   created() {},
   methods: {},

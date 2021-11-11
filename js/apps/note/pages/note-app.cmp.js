@@ -26,7 +26,7 @@ export default {
        <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
        <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
        <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
-            <note-list :notes="notes"></note-list>
+            <note-list @getNote="getNotes" :notes="notes"></note-list>
         </div>
       `,
   data() {

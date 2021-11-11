@@ -7,6 +7,7 @@ export const noteServies = {
   createNewNoteTxt,
   createNewNoteImg,
   createNewNoteTodos,
+  changeColors,
 };
 
 const NOTES_KEY = "notes";
@@ -30,7 +31,10 @@ function createNote() {
       info: {
         txt: "Fullstack Me Baby!",
       },
-      createdAt:getDate(Date.now())
+      createdAt: getDate(Date.now()),
+      style: {
+        backgroundColor: "red",
+      },
     },
     {
       id: "n102",
@@ -42,7 +46,7 @@ function createNote() {
       style: {
         backgroundColor: "#00d",
       },
-      createdAt:getDate(Date.now())
+      createdAt: getDate(Date.now()),
     },
     {
       id: "n103",
@@ -54,7 +58,10 @@ function createNote() {
           { txt: "Coding power", doneAt: getDate(Date.now()) },
         ],
       },
-      createdAt:getDate(Date.now())
+      createdAt: getDate(Date.now()),
+      style: {
+        backgroundColor: "#00d",
+      },
     },
   ];
 }
@@ -66,7 +73,10 @@ function createNewNoteTxt(txt) {
     info: {
       txt,
     },
-    createdAt:getDate(Date.now())
+    createdAt: getDate(Date.now()),
+    style: {
+      backgroundColor: "#00d",
+    },
   };
   return storageService.post(NOTES_KEY, noteTxt);
 }
@@ -81,7 +91,7 @@ function createNewNoteImg(imgUrl, title) {
     style: {
       backgroundColor: "#00d",
     },
-    createdAt:getDate(Date.now())
+    createdAt: getDate(Date.now()),
   };
   console.log(noteImg.info.title);
   return storageService.post(NOTES_KEY, noteImg);
@@ -99,13 +109,21 @@ function createNewNoteTodos(title, todos = []) {
       title,
       todos: todosDate,
     },
-    createdAt:getDate(Date.now())
+    createdAt: getDate(Date.now()),
+    style: {
+      backgroundColor: "#00d",
+    },
   };
-  console.log("this is note todo", noteTodo);
   return storageService.post(NOTES_KEY, noteTodo);
 }
 
-
+function changeColors(noteId, color) {
+ return storageService.get(NOTES_KEY, noteId)
+    .then((note) => {
+   note.style.backgroundColor = color
+  return storageService.put(NOTES_KEY,note)
+  });
+}
 
 function getDate(currDate) {
   const year = new Date(currDate).getFullYear();
@@ -116,8 +134,8 @@ function getDate(currDate) {
   const seconds = new Date(currDate).getSeconds();
   const date = new Date(Date.UTC(year, month, day));
   const time = new Date(Date.UTC(0, 0, 0, hours, minutes, seconds));
-  const optionsDate = {month: 'short', day: 'numeric' };
-  const newDate = date.toLocaleDateString('en-GB', optionsDate);
+  const optionsDate = { month: "short", day: "numeric" };
+  const newDate = date.toLocaleDateString("en-GB", optionsDate);
   const newTime = time.toUTCString().substring(17, 22);
-  return newDate + ' ' + newTime;
+  return newDate + " " + newTime;
 }
