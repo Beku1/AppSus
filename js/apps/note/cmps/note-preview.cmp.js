@@ -8,7 +8,7 @@ export default {
             <div class="note-preview-txt" v-if="isNoteTxt">
              <div>{{note.info.txt}}</div>
 
-             <note-preview-toolbar>
+             <!-- <note-preview-toolbar> -->
             </div>
    
             <div class="note-preview-img" v-if="isNoteImg">
