@@ -5,6 +5,7 @@ export default {
   components: { notePreview },
   template: `
     <section class="note-list-container">
+      
         <div class="note-list-notes">
     <div v-for ="note in notes">
     <note-preview :note="note"></note-preview>

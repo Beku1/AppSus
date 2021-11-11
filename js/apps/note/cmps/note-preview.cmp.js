@@ -9,7 +9,7 @@ export default {
             <div class="note-preview-img" v-if="isNoteImg">
                 <div class="note-preview-the-img">
                     <div>{{note.info.title}}</div>
-                    <img :src="note.info.url"/>
+                    <img :src="note.info.imgUrl"/>
                 </div>
             </div>
 
@@ -31,6 +31,7 @@ export default {
   },
   created() {
     this.checkType(this.note);
+    
   },
   methods: {
     checkType(note) {

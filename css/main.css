@@ -1,7 +1,10 @@
 
 /* IMPORTS CMPS*/
 @import '../css/apps/mail/cmp/mail-preview.css';
+<<<<<<< HEAD
 @import '../css/apps/mail/pages/mail-details.css';
+=======
+>>>>>>> 127b78c51ebe4f24f614ca9fe966b4234a110665
 @import '../css/apps/keep/cmp/note-preview.css';
 @import './apps/keep/cmp/note-list.css';
 @import './apps/keep/pages/note-app.css';
