@@ -2,14 +2,16 @@
 import mailCompose from "./mail-compose.cmp.js"
 
 export default {
-    props:['isDetails'],
+    props:['mail'],
     components:{
      mailCompose
     },
     template:`
     <nav class="mail-folder-list-main">
+     
+        <mail-compose v-if="isCompose" @close="closeModal"/>
+        <button class="compose-button" @click="openCompose">Compose</button>
         
-      <button class="compose-button" @click="compose">Compose</button>
 
       <button class="inbox" @click="setInbox"><i class="fas fa-inbox"></i></button>
 
@@ -24,16 +26,21 @@ export default {
     `,
     data(){
    return {
-       isBackable:null
+       isBackable:null,
+       mailId:null,
+       isCompose:false
+       
    }
     },
     created(){
-     if(this.isDetails)
+     if(this.mail){
      this.isBackable = true
+     this.mailId = this.mail.id
+     }
     },
     methods:{
-    compose(){
-    
+    openCompose(){
+       this.isCompose = true
     },
     setInbox(){
     
@@ -53,6 +60,9 @@ export default {
     },
     pushToList(){
         this.$router.push('/mail')
+    },
+    closeModal(){
+        this.isCompose = false
     }
     
 

@@ -8,9 +8,11 @@ export default {
      mailFolderList
     },
     template:`
+    
     <section class="mail-details" v-if="mail">
+    <router-view></router-view>
         <div>
-        <mail-folder-list :isDetails="'yep'"/>
+        <mail-folder-list :mail="mail"/>
 </div>
         <div class="mail-details-header" >
     <h3>{{mail.title}} <button >Label</button></h3>
@@ -82,13 +84,15 @@ export default {
     watch:{
         '$route.params.mailId':{
             handler(){
+               
+                if(this.$route.params.mailId === ':mailId') return
                 const { mailId } = this.$route.params
                 mailService.getById(mailId)
                 .then(mail => {
                     
                     mail.isRead = true
                     this.mail = mail
-                    this.isLabeled = mail.info.labels.length > 0 ? true : false    
+                    this.isLabeled = mail.labels.length > 0 ? true : false    
                     mailService.put(this.mail)   
                 })
             },

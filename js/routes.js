@@ -3,6 +3,9 @@ import appAbout from './pages/app-about.cmp.js'
 import mailApp from './apps/mail/pages/mail-app.cmp.js'
 import mailDetails from './apps/mail/pages/mail-details.cmp.js'
 import noteAppCmp from './apps/note/pages/note-app.cmp.js'
+import mailCompose from './apps/mail/cmps/mail-compose.cmp.js'
+
+
 
 const routes = [
   {
@@ -14,12 +17,14 @@ const routes = [
     component: appAbout,
   },
   {
-    path: '/mail:compose?:mailid?',
+    path: '/mail',
     component: mailApp,
+
   },
   {
-    path: '/mail/:mailId?:compose?:new?',
+    path: '/mail/:mailId?',
     component: mailDetails,
+    
   },
   {
     path: '/note',

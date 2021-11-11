@@ -11,13 +11,18 @@ export const mailService = {
  query,
  getById,
  removeMail,
- put
+ put,
+ createNewMail,
+ putDraft
 }
 
 
 function query(){
   return storageService.query(MAILS_KEY)
 }
+
+
+
 
 function _createMails(){
   let newMails = utilService.loadFromStorage(MAILS_KEY)
@@ -27,6 +32,58 @@ function _createMails(){
   }
   return newMails
 }
+
+
+
+function createNewMail() {
+  let getUser = query(USER_KEY)
+
+  let newMail = {
+     id:utilService.makeId(),
+     title:'',
+     info:{
+       txt:'',
+       imgUrl:null,
+       vidUrl:null,
+       
+       
+     },
+     labels:[],
+     isRead:false,
+     isStared:false,
+     to:'',
+     from:getUser.email,
+     status:'draft'
+
+   }
+   storageService.post(MAILS_KEY, newMail);
+   return newMail
+}
+
+function putDraft(mail){
+  let mailById = getById(mail.id)
+  if(mailById) return put(mail)
+  return storageService.post(MAILS_KEY,mail)
+
+}
+
+// {
+//   id: "e101",
+//   title: "YOU ARE AMAZING!",
+//   info: {
+//     txt: "Fullstack Me Baby!",
+//     imgUrl: IMG_URL,
+//     vidUrl: VIDEO_URL,
+//     labels: ["important", "romantic"],
+//   },
+//   isRead: false,
+//   isStared: false,
+//   sentAt: 1551133930594,
+//   to: "you@are.amazaing.com",
+//   from:"user@appsus.com",
+//   status: "inbox || sent || trash || draft",
+//  },
+
 
 function getById(mailId){
  return storageService.get(MAILS_KEY,mailId)

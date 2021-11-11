@@ -15,6 +15,7 @@ components:{
 },
 template:`
     <section class="mail-app-main">
+    <router-view></router-view>
          <mail-folder-list/>
         <mail-list :mails="mails"/>
     </section>

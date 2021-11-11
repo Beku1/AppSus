@@ -10,8 +10,9 @@ export const mails =[
       txt: "Fullstack Me Baby!",
       imgUrl: IMG_URL,
       vidUrl: VIDEO_URL,
-      labels: ["important", "romantic"],
+      
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -24,8 +25,9 @@ export const mails =[
     title: "I know you didnt kill her",
     info: {
       txt: "I heard about your wife and I believe you ddint kill her, there is no way you killed her in vegas while you were with me in new york that same day, hope you will feel better",
-      labels: ["important", "romantic"],
+      
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -40,8 +42,9 @@ export const mails =[
       txt: "So I know she is late with the payment just please dont kill her!",
       imgUrl: IMG_URL,
       
-      labels: ["important", "romantic"],
+      
     },
+    labels: ["important", "romantic"],
     isRead: true,
     isStared: false,
     sentAt: 1551133930594,
@@ -56,8 +59,9 @@ export const mails =[
       txt: "I'm pretty sure my married lover is cheating on me on someone expect her husband... can you check up on her?",
       
       vidUrl: VIDEO_URL,
-      labels: ["important", "romantic"],
+     
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -70,8 +74,9 @@ export const mails =[
     title: "I'm not crazy",
     info: {
       txt: "I AM INSANE!!!",
-      labels: ["important", "romantic"],
+     
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -85,8 +90,9 @@ export const mails =[
     info: {
       txt: "Everything above is a lie! ",
       vidUrl:"http://www.youtube.com/embed/8DXHthAxiWs",
-      labels: ["important", "romantic"],
+      
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -102,8 +108,9 @@ export const mails =[
       txt: "If you read everything in your email , you realize you hacked into an insane person's email , just watch out from having leaving own \'Foot Prints\' . Here is a cute picture ",
       imgUrl: IMG_URL,
       vidUrl: VIDEO_URL,
-      labels: ["important", "romantic"],
+    
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
@@ -118,8 +125,9 @@ export const mails =[
       txt: "Fullstack Me Baby!",
       imgUrl: "http://some-img/me",
       vidUrl: "http://some-vid/me",
-      labels: ["important", "romantic"],
+     
     },
+    labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
