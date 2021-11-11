@@ -2,6 +2,11 @@
     width:100%;
 }
 
+.mail-preview a{
+    text-decoration: none;
+    
+}
+
 .mail-preview-main{
     width:800px;
     background:255 255 255 1;
@@ -11,21 +16,29 @@
      justify-content: space-between;
      align-items: center;
      height:40px;
+     text-decoration: none;
+     
+
      
      
 }
 
 .mail-preview-main.unread{
-    font-weight: 900;
+    font-weight: 600;
+    color:black;
+    
+}
 
+.mail-preview-main:not(.unread){
+    color:#5f6368;
 }
 
 .mail-preview-txt{
-    
+    text-decoration: none;
     margin:10px;
 }
 .mail-preview-title{
-    
+    text-decoration: none;
     margin:10px;
 }
 

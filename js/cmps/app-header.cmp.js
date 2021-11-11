@@ -1,4 +1,5 @@
 import { router } from "../routes.js";
+import { eventBus } from '../services/event-bus-service.js'
 
 
 export default {
@@ -11,7 +12,7 @@ export default {
           <div class="app-header-links">      
               <router-link to="/books">Books</router-link> 
               <router-link to="/note">Note</router-link>
-              <router-link to="/mail">Mail</router-link>
+              <router-link to="/mail">Mail<span>{{unreadCount}}</span></router-link>
           </div>   
           <div class="app-header-about">   
             <router-link to="/about">About</router-link>
@@ -20,6 +21,24 @@ export default {
 
       </header>
       `,
-    created() {},
+      data(){
+        return{
+          unreadCount:null
+        }
+      },
+    created() {
+       eventBus.$on('unreadCount',this.getUnread)
+       eventBus.$on('unreadChange',this.unreadChange)
+    },
+    methods:{
+      getUnread(unreadCount){
+        this.unreadCount = unreadCount 
+      },
+      unreadChange(count){
+        this.unreadCount += count
+      }
+      
+    }
+    
   };
   

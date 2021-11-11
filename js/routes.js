@@ -14,11 +14,11 @@ const routes = [
     component: appAbout,
   },
   {
-    path: '/mail',
+    path: '/mail:compose?:mailid?',
     component: mailApp,
   },
   {
-    path: '/mail/:mailId?',
+    path: '/mail/:mailId?:compose?:new?',
     component: mailDetails,
   },
   {

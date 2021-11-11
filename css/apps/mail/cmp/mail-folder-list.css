@@ -1,0 +1,6 @@
+
+
+.mail-folder-list-main{
+    display: flex;
+    flex-direction: column;
+}

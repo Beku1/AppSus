@@ -10,7 +10,8 @@ _createMails()
 export const mailService = {
  query,
  getById,
- removeMail
+ removeMail,
+ put
 }
 
 
@@ -31,10 +32,17 @@ function getById(mailId){
  return storageService.get(MAILS_KEY,mailId)
 }
 
+function put(mail){
+  return storageService.put(MAILS_KEY,mail)
+}
+
 function removeMail(mail){
   console.log(mail)
   if(mail.status !== 'trash'){
-    return mail.status = 'trash'
+    console.log('first')
+     mail.status = 'trash'
+    return  storageService.put(MAILS_KEY,mail)
   } 
+  console.log('second')
  return storageService.remove(MAILS_KEY,mail.id)
 }

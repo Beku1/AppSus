@@ -5,6 +5,8 @@
 @import '../css/apps/keep/cmp/note-preview.css';
 @import './apps/keep/cmp/note-list.css';
 @import './apps/keep/pages/note-app.css';
+@import './apps/mail/cmp/mail-folder-list.css';
+@import './apps/mail/pages/mail-app.css';
 
 /* IMPORST PAGES */
 
@@ -13,6 +15,7 @@
 
 * {
   box-sizing: border-box;
+  font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
 body {

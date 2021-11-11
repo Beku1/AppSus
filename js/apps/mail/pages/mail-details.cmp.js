@@ -1,9 +1,17 @@
 import { mailService } from "../services/mail-service.cmp.js"
+import { eventBus } from "../../../services/event-bus-service.js"
+import mailFolderList from "../cmps/mail-folder-list.cmp.js"
 
 
 export default {
+    components:{
+     mailFolderList
+    },
     template:`
     <section class="mail-details" v-if="mail">
+        <div>
+        <mail-folder-list :isDetails="'yep'"/>
+</div>
         <div class="mail-details-header" >
     <h3>{{mail.title}} <button >Label</button></h3>
    
@@ -18,15 +26,16 @@ export default {
     <button @click="starMail">star</button>
     <!-- TO DO REPLY -->
     <button>reply</button>  
+    <button @click="toggleRead">{{toggleReadBtn}}</button>
     <button @click="deleteMail">delete</button>
         </div>
         <div class="mail-details-body">
             <p>{{mail.info.txt}}</p>
         </div>
         <div class="mail-details-body-vid">
-          <video width="450" :src="mail.info.vidUrl">
-              
-          </video>
+          
+          <iframe v-if="mail.info.vidUrl" width="450" controls :src="mail.info.vidUrl">
+</iframe>
         </div>
         <div v-if="mail.info.imgUrl" class="mail-details-body-img">
              <img :src="mail.info.imgUrl"/>
@@ -40,7 +49,7 @@ export default {
         }
     },
     created(){
-
+    
     },
     methods:{
       starMail(){
@@ -50,12 +59,22 @@ export default {
       deleteMail(){
         mailService.removeMail(this.mail)
         this.$router.push('/mail')
+       
+      },
+      toggleRead(){
+       this.mail.isRead = !this.mail.isRead
+       mailService.put(this.mail)
+       console.log(this.mail.isRead)
       }
     },
     computed:{
      whenSent(){
          let date = new Date(this.mail.sentAt)
          return date.toUTCString()
+     },
+     toggleReadBtn(){
+        
+         return this.mail.isRead ? 'Mark UnRead' : 'mark Read'
      }
     },
    
@@ -66,8 +85,11 @@ export default {
                 const { mailId } = this.$route.params
                 mailService.getById(mailId)
                 .then(mail => {
+                    
+                    mail.isRead = true
                     this.mail = mail
-                    this.isLabeled = mail.info.labels.length > 0 ? true : false       
+                    this.isLabeled = mail.info.labels.length > 0 ? true : false    
+                    mailService.put(this.mail)   
                 })
             },
             immediate:true

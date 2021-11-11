@@ -24,7 +24,6 @@ export const mails =[
     title: "I know you didnt kill her",
     info: {
       txt: "I heard about your wife and I believe you ddint kill her, there is no way you killed her in vegas while you were with me in new york that same day, hope you will feel better",
-      
       labels: ["important", "romantic"],
     },
     isRead: false,
@@ -85,7 +84,7 @@ export const mails =[
     title: "just joking",
     info: {
       txt: "Everything above is a lie! ",
-      
+      vidUrl:"http://www.youtube.com/embed/8DXHthAxiWs",
       labels: ["important", "romantic"],
     },
     isRead: false,
@@ -95,6 +94,7 @@ export const mails =[
     from:"you@me.com",
     status: "inbox || sent || trash || draft",
   },
+  
   {
     id: "e107",
     title: "Or is it??",
