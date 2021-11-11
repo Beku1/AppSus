@@ -3,9 +3,8 @@ import { noteServies } from "../services/note-service.js";
 export default {
   template: `
        <form @submit.prevent="addNoteTxt">
-            <label>txt</label>
-            <input v-model="inputTxt" type="text" placeholder="whats in your mind?"/>
-            <button> send </button>
+            <input class="input-txt" v-model="inputTxt" type="text" placeholder="whats in your mind?"/>
+            <button>Send</button>
       </form>
     `,
   data() {

@@ -2,12 +2,17 @@ import { noteServies } from "../services/note-service.js";
 
 export default {
   template: `
+  <div class="note-img-container">
     <form @submit.prevent="addNoteImg">
-        <label>img</label>
-         <input v-model="inputTitle" type="text" placeholder="title?"/>
-         <input v-model="inputUrl" type="url" placeholder="add a url"/>
-        <button> send </button>
-    </form>
+      <div class="note-img-inputs">
+        <input class="input-txt" v-model="inputTitle" type="text" placeholder="title?"/>
+        <input class="input-img" v-model="inputUrl" type="url" placeholder="add a url"/>
+    </div>
+    <div>
+      <button>Send</button>
+    </div>
+  </form>
+</div>
     `,
   data() {
     return {

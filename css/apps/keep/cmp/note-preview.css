@@ -5,6 +5,12 @@
   min-height: 110px;
   border-radius: 20px;
   padding: 10px;
+  text-align: center;
+    overflow-wrap: break-word;
+    line-break: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .note-preview-each-note:hover {
@@ -19,9 +25,10 @@
 
 .note-preview-txt {
   text-align: center;
-  font-size: 30px;
+  font-size: 1.2rem;
   overflow-wrap: break-word;
   line-break: auto;
+  
 }
 
 .note-preview-img {
@@ -39,4 +46,22 @@
 .note-preview-todos {
   text-align: center;
   line-break: auto;
+}
+
+.time-format {
+  background: aqua;
+  display: flex;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  width: 50%;
+  align-self: end;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.note-prev-navbar {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
+  gap: 10px;
 }

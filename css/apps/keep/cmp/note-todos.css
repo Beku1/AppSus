@@ -1,0 +1,16 @@
+.note-todo-container form{
+    display: flex;
+    gap: 4px;
+}
+
+
+
+.note-todo-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.note-todo-btns{
+    display: flex;
+    flex-direction: column;
+}

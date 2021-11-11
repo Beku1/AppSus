@@ -1,0 +1,12 @@
+
+.note-img-container form{
+    display: flex;
+    gap: 4px;
+
+}
+
+.note-img-inputs{
+    display: flex;
+    flex-direction: column
+}
+
