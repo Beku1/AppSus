@@ -18,8 +18,7 @@ export default {
       note: null,
     };
   },
-  created() {
-  },
+  created() {},
   methods: {},
   //   computed:{},
 };

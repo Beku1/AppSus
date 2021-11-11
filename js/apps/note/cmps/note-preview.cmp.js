@@ -1,22 +1,30 @@
+
+import notePreviewToolbar from "./note-preview-toolbar.js";
+
 export default {
   props: ["note"],
   template: `
     <section class="note-preview-each-note">
             <div class="note-preview-txt" v-if="isNoteTxt">
              <div>{{note.info.txt}}</div>
-            </div>
 
+             <note-preview-toolbar>
+            </div>
+   
             <div class="note-preview-img" v-if="isNoteImg">
                 <div class="note-preview-the-img">
                     <div>{{note.info.title}}</div>
                     <img :src="note.info.imgUrl"/>
                 </div>
+
             </div>
 
             <div class="note-preview-todos" v-if="isNoteTodos">   
                         <div>{{note.info.title}}</div>
-                <ul v-for="todo in note.info.todos">
-                    <li>{{todo.txt}} {{todo.doneAt}}</li>
+                        <p>{{note.createdAt}}</p>
+                        <ul v-for="todo in note.info.todos"> 
+                      <li>{{todo.txt}}</li>
+                      
                 </ul>
             </div>
     </section>
@@ -31,7 +39,6 @@ export default {
   },
   created() {
     this.checkType(this.note);
-    
   },
   methods: {
     checkType(note) {

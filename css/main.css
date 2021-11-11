@@ -7,6 +7,9 @@
 @import './apps/keep/pages/note-app.css';
 @import './apps/mail/cmp/mail-folder-list.css';
 @import './apps/mail/pages/mail-app.css';
+@import '/css/apps/keep/cmp/not-toolbar.css';
+@import './apps/keep/cmp/note-img.css';
+@import './apps/keep/cmp/note-todos.css';
 
 /* IMPORST PAGES */
 
