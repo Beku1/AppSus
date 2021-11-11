@@ -1,0 +1,24 @@
+.user-msg {
+    position: absolute;
+    top: 160px;
+    right: 60px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.user-msg button{
+    position: absolute;
+    background-color: lightgray;
+    padding:5px;
+    border-radius: 5px;
+    right:10px;
+    top:10px;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.error {
+    background-color: lightcoral;
+}

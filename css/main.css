@@ -11,6 +11,8 @@
 @import '/css/apps/keep/cmp/not-toolbar.css';
 @import './apps/keep/cmp/note-img.css';
 @import './apps/keep/cmp/note-todos.css';
+@import './cmp/user-msg.css';
+@import './animation.css';
 
 /* IMPORST PAGES */
 

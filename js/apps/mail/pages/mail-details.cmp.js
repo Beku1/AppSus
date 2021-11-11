@@ -13,7 +13,7 @@ export default {
     <router-view></router-view>
         <div>
         <mail-folder-list :mail="mail"/>
-</div>
+        </div>
         <div class="mail-details-header" >
     <h3>{{mail.title}} <button >Label</button></h3>
    
@@ -27,8 +27,11 @@ export default {
     <p> {{whenSent}} </p>
     <button @click="starMail">star</button>
     <!-- TO DO REPLY -->
+    
     <button>reply</button>  
     <button @click="toggleRead">{{toggleReadBtn}}</button>
+    <!-- TO DO Merg with Note -->
+    <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
     <button @click="deleteMail">delete</button>
         </div>
         <div class="mail-details-body">
@@ -37,7 +40,7 @@ export default {
         <div class="mail-details-body-vid">
           
           <iframe v-if="mail.info.vidUrl" width="450" controls :src="mail.info.vidUrl">
-</iframe>
+        </iframe>
         </div>
         <div v-if="mail.info.imgUrl" class="mail-details-body-img">
              <img :src="mail.info.imgUrl"/>
@@ -51,9 +54,13 @@ export default {
         }
     },
     created(){
-    
+      
+      
     },
     methods:{
+        sendToNote(){
+
+        },
       starMail(){
           this.mail.isStared = !this.mail.isStared
          
@@ -66,7 +73,7 @@ export default {
       toggleRead(){
        this.mail.isRead = !this.mail.isRead
        mailService.put(this.mail)
-       console.log(this.mail.isRead)
+       
       }
     },
     computed:{
@@ -89,7 +96,7 @@ export default {
                 const { mailId } = this.$route.params
                 mailService.getById(mailId)
                 .then(mail => {
-                    
+                    if(!mail.isRead) eventBus.$emit('unreadChange',-1)
                     mail.isRead = true
                     this.mail = mail
                     this.isLabeled = mail.labels.length > 0 ? true : false    

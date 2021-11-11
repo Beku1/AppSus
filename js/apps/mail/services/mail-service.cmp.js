@@ -13,7 +13,7 @@ export const mailService = {
  removeMail,
  put,
  createNewMail,
- putDraft
+ 
 }
 
 
@@ -39,14 +39,11 @@ function createNewMail() {
   let getUser = query(USER_KEY)
 
   let newMail = {
-     id:utilService.makeId(),
      title:'',
      info:{
        txt:'',
        imgUrl:null,
        vidUrl:null,
-       
-       
      },
      labels:[],
      isRead:false,
@@ -60,12 +57,6 @@ function createNewMail() {
    return newMail
 }
 
-function putDraft(mail){
-  let mailById = getById(mail.id)
-  if(mailById) return put(mail)
-  return storageService.post(MAILS_KEY,mail)
-
-}
 
 // {
 //   id: "e101",
