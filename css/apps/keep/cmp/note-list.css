@@ -6,17 +6,11 @@
   justify-content: center;
 }
 
-
-
 .note-list-notes {
   display: flex;
-  /* justify-content: space-between; */
+  flex-wrap: wrap;
   width: 100%;
   justify-content: flex-end;
-  min-height: 80vh;
+  gap: 20px;
+  margin-top: 20px;
 }
-.note-list-notes > * {
-  margin: 20px;
-}
-
-

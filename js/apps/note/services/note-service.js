@@ -1,11 +1,12 @@
 import { storageService } from "../../../services/async-storage-service.js";
 import { utilService } from "../../../services/utils-service.js";
 
-
-
 export const noteServies = {
   query,
   createNote,
+  createNewNoteTxt,
+  createNewNoteImg,
+  createNewNoteTodos
 };
 
 const NOTES_KEY = "notes";
@@ -21,7 +22,7 @@ function query() {
 }
 
 function createNote() {
- return [
+  return [
     {
       id: "n101",
       type: "note-txt",
@@ -34,7 +35,7 @@ function createNote() {
       id: "n102",
       type: "note-img",
       info: {
-        url: "http://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
+        imgUrl: "http://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
         title: "Bobi and Me",
       },
       style: {
@@ -53,4 +54,49 @@ function createNote() {
       },
     },
   ];
+}
+
+function createNewNoteTxt(txt) {
+  let noteTxt = {
+    type: "note-txt",
+    isPinned: false,
+    info: {
+      txt,
+    },
+  };
+  return storageService.post(NOTES_KEY, noteTxt);
+}
+
+function createNewNoteImg(imgUrl, title) {
+  let noteImg = {
+    type: "note-img",
+    info: {
+      imgUrl,
+      title,
+    },
+    style: {
+      backgroundColor: "#00d",
+    },
+  };
+  console.log(noteImg.info.title);
+  return storageService.post(NOTES_KEY, noteImg);
+}
+
+
+function createNewNoteTodos(title, todos = []) {
+
+  let todosDate = todos.map((todo)=>{
+    console.log("from map",todo.txt);
+     todo['doneAt'] = Date.now()
+     return todo
+      })
+  let noteTodo = {
+    type: "note-todos",
+    info: {
+      title,
+      todos: todosDate,
+    },
+  };
+  console.log('this is note todo',noteTodo);
+  return storageService.post(NOTES_KEY, noteTodo);
 }

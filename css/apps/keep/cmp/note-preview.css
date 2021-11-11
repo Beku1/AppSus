@@ -1,36 +1,31 @@
 .note-preview-txt,
 .note-preview-the-img,
 .note-preview-todos {
-
   width: 250px;
   min-height: 110px;
-    border-radius: 20px;
-    padding: 10px;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-.note-preview-each-note:hover{
-    box-shadow: 0 0 5px
-    
+.note-preview-each-note:hover {
+  box-shadow: 0 0 5px;
 }
-.note-preview-each-note{
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
-    transition: 0.3s;
-    cursor: pointer;
-    
+.note-preview-each-note {
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .note-preview-txt {
   text-align: center;
   font-size: 30px;
-  /* background-color: lightsalmon; */
-  
+  overflow-wrap: break-word;
   line-break: auto;
 }
 
 .note-preview-img {
   text-align: center;
-  /* background-color: lightblue; */
   width: 250px;
   min-height: 110px;
   border-radius: 20px;
@@ -43,7 +38,5 @@
 
 .note-preview-todos {
   text-align: center;
-  /* background-color: lightgreen; */
- 
   line-break: auto;
 }
