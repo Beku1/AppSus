@@ -1,7 +1,8 @@
 export const utilService = {
     saveToStorage,
     loadFromStorage,
-    makeId
+    makeId,
+    sortTitle
 }
 
 function saveToStorage(key, value) {
@@ -20,4 +21,13 @@ function makeId(length = 5) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+function sortTitle(entities){
+  let sortedEntities = entities.sort(function(a,b){
+    if(a.title < b.title) { return -1; }
+    if(a.title > b.title) { return 1; }
+    return 0;
+  })
+  return sortedEntities
 }

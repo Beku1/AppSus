@@ -46,7 +46,7 @@ export default {
     this.labelInput = false
     this.getNewMail()
       this.interval = setInterval(()=>{
-       
+       mailService.put(this.mail)
       },5000)
   },
   destroyed() {},
@@ -70,7 +70,7 @@ export default {
     showLabel() {
       this.labelInput = !this.labelInput
       var a = /^\s+$/.test(this.mail.title)
-      console.log(a)
+     
     },
     makeDraft(){
         mailService.put(this.mail)
@@ -120,7 +120,7 @@ export default {
         else reject(err)
       })
         .then((res) => {
-          console.log(res)
+         
           const msg = {
             txt: 'Mail is valid',
             type: 'success',
@@ -128,7 +128,7 @@ export default {
           eventBus.$emit('showMsg', msg)
         })
         .catch(() => {
-          console.log('wrong')
+         
           const msg = {
             txt: 'Invalid mail address',
             type: 'error',

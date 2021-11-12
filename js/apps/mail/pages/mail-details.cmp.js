@@ -1,13 +1,12 @@
-import { mailService } from "../services/mail-service.cmp.js"
-import { eventBus } from "../../../services/event-bus-service.js"
-import mailFolderList from "../cmps/mail-folder-list.cmp.js"
-
+import { mailService } from '../services/mail-service.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
+import mailFolderList from '../cmps/mail-folder-list.cmp.js'
 
 export default {
-    components:{
-     mailFolderList
-    },
-    template:`
+  components: {
+    mailFolderList,
+  },
+  template: `
     
     <section class="mail-details" v-if="mail">
     <router-view></router-view>
@@ -29,7 +28,8 @@ export default {
     <!-- TO DO REPLY -->
     
     <button>reply</button>  
-    <button @click="toggleRead">{{toggleReadBtn}}</button>
+    <button v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
+    <button v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
     <!-- TO DO Merg with Note -->
     <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
     <button @click="deleteMail">delete</button>
@@ -47,70 +47,72 @@ export default {
         </div>
     </section>
     `,
-    data(){
-        return{
-            mail:null,
-            isLabeled:false,
-        }
-    },
-    created(){
-      
-      
-    },
-    methods:{
-        sendToNote(){
-
-        },
-      starMail(){
-          this.mail.isStared = !this.mail.isStared
-         
-      },
-      deleteMail(){
-        mailService.removeMail(this.mail)
-        this.$router.push('/mail')
-       
-      },
-      toggleRead(){
-       this.mail.isRead = !this.mail.isRead
-       mailService.put(this.mail)
-       
-      }
-    },
-    computed:{
-     whenSent(){
-         let date = new Date(this.mail.sentAt)
-         return date.toUTCString()
-     },
-     toggleReadBtn(){
-        
-         return this.mail.isRead ? 'Mark UnRead' : 'mark Read'
-     }
-    },
-   
-  
-    watch:{
-        '$route.params.mailId':{
-            handler(){
-               
-                if(this.$route.params.mailId === ':mailId') return
-                const { mailId } = this.$route.params
-                mailService.getById(mailId)
-                .then(mail => {
-                    if(!mail.isRead) eventBus.$emit('unreadChange',-1)
-                    mail.isRead = true
-                    this.mail = mail
-                    this.isLabeled = mail.labels.length > 0 ? true : false    
-                    mailService.put(this.mail)   
-                })
-            },
-            immediate:true
-        }
+  data() {
+    return {
+      mail: null,
+      isLabeled: false,
     }
+  },
+  created() {},
+  methods: {
+    sendToNote() {},
+    starMail() {
+      this.mail.isStared = !this.mail.isStared
+    },
+    deleteMail() {
+      mailService
+        .removeMail(this.mail)
+        .then((res) => {
+          if (res) {
+            this.sendUserMsg('Mail moved to trash','success')
+          } else {
+            this.sendUserMsg("Mail removed Successfully",'success')
+          }
+        })
+        .catch((err) => {
+            this.sendUserMsg("Error , Couldn't remove",'success')
+         
+        })
+        .then(this.$router.push('/mail'))
+    },
+    toggleRead() {
+      this.mail.isRead = !this.mail.isRead
+      if(this.mail.isRead)this.sendUserMsg('Mail became read','success')
+      else this.sendUserMsg('Mail became unread','success')
+      mailService.put(this.mail)
+    },
+    sendUserMsg(txt,type){
+        const msg ={
+            txt,
+            type
+        }
+        eventBus.$emit('showMsg', msg)
+    }
+  },
+  computed: {
+    whenSent() {
+      let date = new Date(this.mail.sentAt)
+      return date.toUTCString()
+    },
+  },
+
+  watch: {
+    '$route.params.mailId': {
+      handler() {
+        if (this.$route.params.mailId === ':mailId') return
+        const { mailId } = this.$route.params
+        mailService.getById(mailId).then((mail) => {
+          if (!mail.isRead) eventBus.$emit('unreadChange', -1)
+          mail.isRead = true
+          this.mail = mail
+          this.isLabeled = mail.labels.length > 0 ? true : false
+          mailService.put(this.mail)
+        })
+      },
+      immediate: true,
+    },
+  },
 }
-
-
-
-
 
 // {
 //     id: "e101",

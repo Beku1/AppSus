@@ -13,7 +13,8 @@ export const mailService = {
  removeMail,
  put,
  createNewMail,
- 
+ post,
+ sortBy
 }
 
 
@@ -84,13 +85,26 @@ function put(mail){
   return storageService.put(MAILS_KEY,mail)
 }
 
+function post(mail){
+  return storageService.post(MAILS_KEY,mail)
+}
+
+function sortBy(type){
+  return query()
+  .then(entities => {
+    if(type = 'title') var sorted =  utilService.sortTitle(entities)
+    
+  return sorted
+  })
+   
+}
+
 function removeMail(mail){
-  console.log(mail)
+  
   if(mail.status !== 'trash'){
-    console.log('first')
      mail.status = 'trash'
     return  storageService.put(MAILS_KEY,mail)
   } 
-  console.log('second')
+  
  return storageService.remove(MAILS_KEY,mail.id)
 }

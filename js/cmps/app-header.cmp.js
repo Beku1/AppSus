@@ -30,6 +30,10 @@ export default {
        eventBus.$on('unreadCount',this.getUnread)
        eventBus.$on('unreadChange',this.unreadChange)
     },
+    destroyed(){
+     eventBus.$off('unreadCount')
+     eventBus.$off('unreadChange')
+    },
     methods:{
       getUnread(unreadCount){
         this.unreadCount = unreadCount 
