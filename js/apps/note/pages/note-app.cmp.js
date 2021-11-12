@@ -4,6 +4,7 @@ import noteList from "../cmps/note-list.cmp.js";
 import noteImg from "../cmps/note-img.cmp.js";
 import noteTodos from "../cmps/note-todos.cmp.js";
 import noteToolbar from "../cmps/note-toolbar.cmp.js";
+import { eventBus } from "../../../services/event-bus-service.js";
 
 export default {
   props: [],
@@ -14,9 +15,6 @@ export default {
     noteImg,
     noteTodos,
     noteToolbar,
-    // bookDetails,
-    // bookFilter,
-    // bookAdd,
   },
   template: `
         <div class="note-app-main">
@@ -26,7 +24,7 @@ export default {
        <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
        <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
        <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
-            <note-list @getNote="getNotes" :notes="notes"></note-list>
+            <note-list v-if="notes" :notes="notes"></note-list>
         </div>
       `,
   data() {
@@ -41,8 +39,22 @@ export default {
   },
   created() {
     this.getNotes();
+    eventBus.$on("loadNotes", this.getNotes);
+    eventBus.$on("changeNotes", this.changeNotes);
+  },
+  destroyed() {
+    eventBus.$off("loadNotes");
   },
   methods: {
+    changeNotes(notes){
+      this.notes= notes
+    },
+    loadNotes(notes) {
+      noteServies.query().then((notes) => {
+        console.log(notes);
+        this.notes = notes;
+      });
+    },
     getNotes(newNote) {
       if (newNote) {
         this.notes = newNote;

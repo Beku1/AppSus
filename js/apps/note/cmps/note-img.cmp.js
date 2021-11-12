@@ -9,7 +9,7 @@ export default {
         <input class="input-img" v-model="inputUrl" type="url" placeholder="add a url"/>
     </div>
     <div>
-      <button>Send</button>
+      <button class="note-img-btn">Send</button>
     </div>
   </form>
 </div>
