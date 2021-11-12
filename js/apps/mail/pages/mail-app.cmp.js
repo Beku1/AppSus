@@ -19,7 +19,7 @@ components:{
 template:`
     <section class="mail-app-main">
         <user-msg/>
-        <mail-filter @filtered="setFilter"/>
+        <mail-filter @filtered="setFilter" @sorted="setSort"/>
          <mail-folder-list />
         <mail-list :mails="mails"/>
     </section>
@@ -27,6 +27,8 @@ template:`
 data(){
     return {
      mails:null,
+     filterBy:null
+
     }
 },
 created(){
@@ -47,6 +49,7 @@ created(){
       })
     },
     setFilter(filterBy){
+        this.filterBy = filterBy
      this.loadMails()
      .then(mails =>{
          
@@ -67,8 +70,16 @@ created(){
         })
          this.mails = filteredMails
      })
-    }
     },
+      setSort(sortBy = 'date',isBackwards = false){
+          if(sortBy === 'title') return _.orderBy(this.mails,'title')
+          else return _.orderBy(this.mail,'sentAt')
+
+      }
+    },
+    computed:{
+       
+    }
 
 }
 

@@ -77,9 +77,7 @@ export default {
     },
     toggleRead() {
       this.mail.isRead = !this.mail.isRead
-      if(this.mail.isRead)this.sendUserMsg('Mail became read','success')
-      else this.sendUserMsg('Mail became unread','success')
-      mailService.put(this.mail)
+      mailService.put(this.mail) 
     },
     sendUserMsg(txt,type){
         const msg ={

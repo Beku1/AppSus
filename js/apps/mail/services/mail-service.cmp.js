@@ -89,14 +89,14 @@ function post(mail){
   return storageService.post(MAILS_KEY,mail)
 }
 
-function sortBy(type){
+function sortBy(type,isBackwards){
   return query()
   .then(entities => {
-    if(type = 'title') var sorted =  utilService.sortTitle(entities)
-    
-  return sorted
+  
+     var sorted = utilService.sortMail(entities,type,isBackwards)
+   return storageService.sortBy(MAILS_KEY,sorted) 
   })
-   
+  
 }
 
 function removeMail(mail){

@@ -1,6 +1,8 @@
 // including sort
 
+import { utilService } from "../../../services/utils-service.js"
 import { mailService } from "../services/mail-service.cmp.js"
+import { eventBus } from "../../../services/event-bus-service.js"
 
 export default {
     template:`
@@ -26,8 +28,8 @@ export default {
     
 </div>
 <div class="sorting">
-          <button @click="sortBy('title')">Sort by title</button>
-          <button @click="sortBy('date')">Sort by date</button>
+          <button @click="sortMails('title')">Sort by title</button>
+          <button @click="sortMails('date')">Sort by date</button>
          </div>
     </section>
     `,
@@ -37,11 +39,17 @@ export default {
          read:'',
          txt:null,
          
-     }
+     },
+     sortBy:{
+         type:'date',
+         isBackwards:false
+     },
+     isSortDateBackwards:false,
+     isSortTitleBakwards:false
      }
     },
     created(){
-
+    
     },
     destroyed(){
 
@@ -53,8 +61,19 @@ export default {
 
          this.$emit('filtered',{...this.filterBy})
      },
-     sortBy(type){
-      mailService.sortBy(type)
+     sortMails(type){
+         this.sortBy.type = type
+         if(type === 'title') {
+            this.sortBy.isBackwards = this.isSortTitleBakwards
+             this.isSortTitleBakwards = !this.isSortTitleBakwards
+         }
+         else {
+            this.sortBy.isBackwards = this.isSortDateBackwards
+             this.isSortDateBackwards = !this.isSortDateBackwards
+         } 
+         
+         this.$emit('sortBy',this.sortBy)
+        
      }
     },
     computed:{

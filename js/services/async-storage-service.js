@@ -7,7 +7,9 @@ export const storageService = {
   postMany,
   putFirst,
   putAfterPinned,
-  sortPinned
+  sortPinned,
+  sortBy
+
 };
 
 function query(entityType) {
@@ -17,6 +19,7 @@ function query(entityType) {
 
 function get(entityType, entityId) {
   return query(entityType).then((entities) =>
+  
     entities.find((entity) => entity.id === entityId)
   );
 }
@@ -75,6 +78,13 @@ function sortPinned(entityType) {
     return pinnedEntities
   });
   
+}
+
+
+function sortBy(entityType,sortedEntities){
+
+    
+ return _save(entityType,sortedEntities)
 }
 
 function put(entityType, updatedEntity) {
