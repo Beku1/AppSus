@@ -9,7 +9,8 @@ export const noteServies = {
   createNewNoteTodos,
   changeColors,
   sortByPin,
-  removeNote
+  removeNote,
+  duplicateNote
 };
 
 const NOTES_KEY = "notes";
@@ -58,8 +59,8 @@ function createNote() {
       info: {
         title: "Get my stuff together",
         todos: [
-          { txt: "Driving liscence", doneAt: getDate(Date.now()) },
-          { txt: "Coding power", doneAt: getDate(Date.now()) },
+          { txt: "Driving liscence", doneAt: getDate(Date.now()) ,checked:false  },
+          { txt: "Coding power", doneAt: getDate(Date.now()) ,checked:false  },
         ],
       },
       createdAt: getDate(Date.now()),
@@ -98,14 +99,15 @@ function createNewNoteImg(imgUrl, title) {
     },
     createdAt: getDate(Date.now()),
   };
-  console.log(noteImg.info.title);
+ 
   return storageService.post(NOTES_KEY, noteImg);
 }
 
 function createNewNoteTodos(title, todos = []) {
   let todosDate = todos.map((todo) => {
-    console.log("from map", todo.txt);
+   
     todo["doneAt"] = getDate(Date.now());
+    todo["checked"] = false
     return todo;
   });
   let noteTodo = {
@@ -120,6 +122,7 @@ function createNewNoteTodos(title, todos = []) {
       backgroundColor: "white",
     },
   };
+  console.log(noteTodo);
   return storageService.post(NOTES_KEY, noteTodo);
 }
 
@@ -139,11 +142,16 @@ function sortByPin(note) {
 }
 
 function removeNote(note){
-
   return storageService.remove(NOTES_KEY,note.id).then(()=>{
     return storageService.query(NOTES_KEY)
   })
  
+}
+
+function duplicateNote(note){
+  // console.log('from service 1',note);
+  return storageService.post(NOTES_KEY,note)
+
 }
 
 

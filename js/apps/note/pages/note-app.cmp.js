@@ -24,6 +24,21 @@ export default {
        <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
        <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
        <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
+
+       <!-- note-filter - you have empty file in note -> cmps -> note-filter.cmp.js -->
+       <div class="filter-container">    
+         <input type="text">
+         <div class="select-by-types">
+           <select>
+             <option>All</option>
+             <option>Images</option>
+             <option>Text</option>
+             <option>Todos</option>
+             <option>Videos</option>
+           </select>
+          </div>
+       </div>
+       <!--  -->
             <note-list v-if="notes" :notes="notes"></note-list>
         </div>
       `,

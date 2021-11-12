@@ -27,7 +27,7 @@ export default {
               <i class="fas fa-palette"></i>
           </div>
 
-            <div><i class="fas fa-edit"></i></div>
+            <div><i @click="duplicateNote" class="fas fa-edit"></i></div>
 
             <div><i  @click="removeTheNote" class="fas fa-trash-alt"></i></div>
         </div>
@@ -43,11 +43,15 @@ export default {
     this.isPinned = this.note.isPinned;
   },
   methods: {
+    duplicateNote() {
+      noteServies.duplicateNote(this.note).then(() => {
+        eventBus.$emit("loadNotes");
+      });
+    },
     removeTheNote() {
-      noteServies.removeNote(this.note).then((notes)=>{
-        eventBus.$emit("changeNotes",notes);
-      })
-
+      noteServies.removeNote(this.note).then((notes) => {
+        eventBus.$emit("changeNotes", notes);
+      });
     },
     toggleColor() {
       this.toggleColors = !this.toggleColors;
