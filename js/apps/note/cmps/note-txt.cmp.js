@@ -4,7 +4,7 @@ export default {
   template: `
        <form @submit.prevent="addNoteTxt">
             <input class="input-txt" v-model="inputTxt" type="text" placeholder="whats in your mind?"/>
-            <button>Send</button>
+            <button class="note-txt-btn">Send</button>
       </form>
     `,
   data() {

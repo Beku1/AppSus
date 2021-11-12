@@ -1,27 +1,23 @@
-
 /* IMPORTS CMPS*/
-@import '../css/apps/mail/cmp/mail-preview.css';
-@import '../css/apps/mail/pages/mail-details.css';
-@import '../css/apps/keep/cmp/note-preview.css';
-@import './apps/keep/cmp/note-list.css';
-@import './apps/keep/pages/note-app.css';
-@import './apps/mail/cmp/mail-folder-list.css';
-@import './apps/mail/pages/mail-app.css';
-@import './apps/mail/cmp/mail-compose.css';
-@import '/css/apps/keep/cmp/not-toolbar.css';
-@import './apps/keep/cmp/note-img.css';
-@import './apps/keep/cmp/note-todos.css';
-@import './cmp/user-msg.css';
-@import './animation.css';
+@import "../css/apps/mail/cmp/mail-preview.css";
+@import "../css/apps/mail/pages/mail-details.css";
+@import "../css/apps/keep/cmp/note-preview.css";
+@import "./apps/keep/cmp/note-list.css";
+@import "./apps/keep/pages/note-app.css";
+@import "./apps/mail/cmp/mail-folder-list.css";
+@import "./apps/mail/pages/mail-app.css";
+@import "./apps/mail/cmp/mail-compose.css";
+@import "/css/apps/keep/cmp/note-toolbar.css";
+@import "./apps/keep/cmp/note-img.css";
+@import "./apps/keep/cmp/note-todos.css";
+@import "./cmp/user-msg.css";
+@import "./animation.css";
 
 /* IMPORST PAGES */
 
-
-
-
 * {
   box-sizing: border-box;
-  font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -61,22 +57,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: lightgray;
-  height: 80px;
+  background: white;
+  height: 65px;
   padding: 0 20px;
   margin-bottom: 20px;
+  border-top: 1px solid #dadce0;
+  border-bottom: 1px solid #dadce0;
+  margin-top: -1px;
 }
 .app-header-nav a {
+  font-family: 'Product Sans',Arial,sans-serif;
   margin: 0 10px;
+  text-decoration: none;
+  color: #5f6368;
 }
 
-.app-header-links{
+.app-header-nav a:active{
+  text-decoration: underline;
+  text-decoration-color: #5f6368;
+}
+
+.app-header-links {
   width: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.app-header-links a{
+.app-header-links a {
   margin: 0 10px;
 }
-

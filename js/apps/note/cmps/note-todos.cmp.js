@@ -9,8 +9,8 @@ export default {
         <input  class='input-img' v-model="todo" type="text" placeholder="todo?"/>
       </div>
       <div class="note-todo-btns">
-        <button @click.prevent="addTodo">+</button>
-        <button type="submit">Send</button>
+        <button class="note-todos-btn" type="submit">Send</button>
+        <button class="note-todos-btn" @click.prevent="addTodo">+</button>
       </div>
     </form>
   </div>

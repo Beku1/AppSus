@@ -8,6 +8,8 @@ export const noteServies = {
   createNewNoteImg,
   createNewNoteTodos,
   changeColors,
+  sortByPin,
+  removeNote
 };
 
 const NOTES_KEY = "notes";
@@ -27,30 +29,32 @@ function createNote() {
     {
       id: "n101",
       type: "note-txt",
-      isPinned: true,
+      isPinned: false,
       info: {
         txt: "Fullstack Me Baby!",
       },
       createdAt: getDate(Date.now()),
       style: {
-        backgroundColor: "red",
+        backgroundColor: "white",
       },
     },
     {
       id: "n102",
       type: "note-img",
+      isPinned: false,
       info: {
         imgUrl: "http://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
         title: "Bobi and Me",
       },
       style: {
-        backgroundColor: "#00d",
+        backgroundColor: "white",
       },
       createdAt: getDate(Date.now()),
     },
     {
       id: "n103",
       type: "note-todos",
+      isPinned: false,
       info: {
         title: "Get my stuff together",
         todos: [
@@ -60,7 +64,7 @@ function createNote() {
       },
       createdAt: getDate(Date.now()),
       style: {
-        backgroundColor: "#00d",
+        backgroundColor: "white",
       },
     },
   ];
@@ -75,7 +79,7 @@ function createNewNoteTxt(txt) {
     },
     createdAt: getDate(Date.now()),
     style: {
-      backgroundColor: "#00d",
+      backgroundColor: "white",
     },
   };
   return storageService.post(NOTES_KEY, noteTxt);
@@ -84,12 +88,13 @@ function createNewNoteTxt(txt) {
 function createNewNoteImg(imgUrl, title) {
   let noteImg = {
     type: "note-img",
+    isPinned: false,
     info: {
       imgUrl,
       title,
     },
     style: {
-      backgroundColor: "#00d",
+      backgroundColor: "white",
     },
     createdAt: getDate(Date.now()),
   };
@@ -105,25 +110,42 @@ function createNewNoteTodos(title, todos = []) {
   });
   let noteTodo = {
     type: "note-todos",
+    isPinned: false,
     info: {
       title,
       todos: todosDate,
     },
     createdAt: getDate(Date.now()),
     style: {
-      backgroundColor: "#00d",
+      backgroundColor: "white",
     },
   };
   return storageService.post(NOTES_KEY, noteTodo);
 }
 
 function changeColors(noteId, color) {
- return storageService.get(NOTES_KEY, noteId)
-    .then((note) => {
-   note.style.backgroundColor = color
-  return storageService.put(NOTES_KEY,note)
+  return storageService.get(NOTES_KEY, noteId).then((note) => {
+    note.style.backgroundColor = color;
+    return storageService.put(NOTES_KEY, note);
   });
 }
+
+// understand again !
+function sortByPin(note) {
+  if (note.isPinned) return storageService.putFirst(NOTES_KEY, note);
+  return storageService.putAfterPinned(NOTES_KEY, note).then((notes) => {
+    return storageService.sortPinned(NOTES_KEY);
+  });
+}
+
+function removeNote(note){
+
+  return storageService.remove(NOTES_KEY,note.id).then(()=>{
+    return storageService.query(NOTES_KEY)
+  })
+ 
+}
+
 
 function getDate(currDate) {
   const year = new Date(currDate).getFullYear();
