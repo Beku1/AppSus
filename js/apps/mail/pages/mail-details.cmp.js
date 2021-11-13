@@ -28,7 +28,7 @@ export default {
     <button @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
     <!-- TO DO REPLY -->
     
-    <button><i class="fas fa-reply"></i></button>  
+    <!-- <button><i class="fas fa-reply"></i></button>   -->
     <button v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
     <button v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
     <!-- TO DO Merg with Note -->
