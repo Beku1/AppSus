@@ -8,7 +8,7 @@ export default {
       <header class="app-header-main">
         <nav class="app-header-nav">
           <div class="app-header-logo">          
-            <router-link to="/"><img class="logo-img" src="@/img/logo.png"/></router-link>
+            <router-link to="/"><img class="logo-img" src="./img/logo.png"/></router-link>
           </div>    
           <div class="app-header-links">      
               <router-link to="/book"><i class="fas fa-book"></i></router-link> 
