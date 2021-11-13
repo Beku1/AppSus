@@ -4,7 +4,7 @@ export default {
                
             <div class="home-page-hero">
             
- <h3>Welcome To </h3><span> <img class="icon-home-page" src="./../img/icon.png" /></span>
+ <h3>Welcome To  </h3><span> Appsus <img class="icon-home-page" src="./../img/icon.png" /></span>
               <h2>Everything in one place</h2>
               
             </div>
