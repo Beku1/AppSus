@@ -47,7 +47,7 @@ li {
 .home-page {
   display: flex;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .home-page-hero {
@@ -58,7 +58,7 @@ li {
   height: 650px;
   font-size: 30px;
   align-items: center;
-  background: linear-gradient( to left,#ea4335,#4285f4, #fbbc06);
+  background: linear-gradient(to left, #ea4335, #4285f4, #fbbc06);
   color: white;
 }
 
@@ -109,6 +109,11 @@ li {
   position: relative;
 }
 
+.bold{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .screen {
   position: fixed;
   top: 0;
@@ -119,3 +124,20 @@ li {
   z-index: 20;
 }
 
+.about-page-app {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  line-height: 40px;
+}
+.about-page-header-app {
+  width: 60%;
+  margin-top: 80px;
+}
+
+.about-header-forget {
+  margin: 40px;
+  margin-bottom: 100px;
+  letter-spacing: 2px;
+}
