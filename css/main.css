@@ -41,8 +41,8 @@ li {
 
 /* homepage */
 
-.home-page-txt{
-  font-family:'-webkit-pictograph';
+.home-page-txt {
+  font-family: "-webkit-pictograph";
   letter-spacing: 5px;
 }
 
@@ -79,9 +79,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 75px;
-  padding: 0 20px;
+  padding: 0 20px 0px 0;
   margin-bottom: 20px;
   border-top: 1px solid #dadce0;
   border-bottom: 1px solid #dadce0;
@@ -104,7 +103,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-inline-end: 5%;
 }
 .app-header-links a {
   margin: 0 10px;
