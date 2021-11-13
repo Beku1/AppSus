@@ -79,7 +79,7 @@ function createNote() {
       type: "note-img",
       isPinned: false,
       info: {
-        imgUrl: "http://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
+        imgUrl: "https://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
         title: "Bobi and Me",
       },
       style: {
@@ -113,7 +113,7 @@ function createNote() {
       isPinned: false,
       info: {
         vidUrl:
-          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+          "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
         title: "Bobi and Me",
       },
       style: {
