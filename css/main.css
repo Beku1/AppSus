@@ -51,13 +51,15 @@ li {
 }
 
 .home-page-hero {
-  background-color: lightblue;
   flex-direction: column;
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 500px;
+  height: 650px;
+  font-size: 30px;
   align-items: center;
+  background: linear-gradient( to left,#ea4335,#4285f4, #fbbc06);
+  color: white;
 }
 
 /* header */
