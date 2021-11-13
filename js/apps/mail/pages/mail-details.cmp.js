@@ -14,40 +14,42 @@ export default {
         <div>
         <mail-folder-list :mail="mail"/>
         </div>
-        <div class="mail-details-header" >
-    <h3>{{mail.title}} </h3>
-   
-    <div>
-    <label v-show="isLabeled" v-for="label in mail.info.labels"> {{label}}</label>
-</div></div>
- <div class="mail-details-info">
-     <div class="mail-details-from-to">
-   <span > From: {{mail.from}}</span><span>To: {{mail.to}}</span>
- </div>
-    <p> {{whenSent}} </p>
-    <button title="Star this mail" @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
-    <!-- TO DO REPLY -->
-    
-    <!-- <button><i class="fas fa-reply"></i></button>   -->
-    <button title="Make it read" v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
-    <button title="Make it unread" v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
-    <!-- TO DO Merg with Note -->
-    <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
-    <button @click="deleteMail"><i class="fas fa-trash-alt"></i></button>
-        </div>
-        <div class="mail-details-body">
-            <p>{{mail.info.txt}}</p>
-        </div>
-        <div class="mail-details-body-vid">
-          
-          <iframe v-if="mail.info.vidUrl" width="450" height="450" controls :src="mail.info.vidUrl" allowfullscreen>
-        </iframe>
-        </div>
-        <div v-if="mail.info.imgUrl" class="mail-details-body-img">
-             <img :src="mail.info.imgUrl"/>
-        </div>
-    </section>
-    `,
+        <div>
+          <div class="mail-details-header" >
+            <h3>{{mail.title}} </h3>
+            
+            <div>
+              <label v-show="isLabeled" v-for="label in mail.info.labels"> {{label}}</label>
+            </div></div>
+            <div class="mail-details-info">
+              <div class="mail-details-from-to">
+                <span > From: {{mail.from}}</span><span>To: {{mail.to}}</span>
+              </div>
+              <p> {{whenSent}} </p>
+              <button title="Star this mail" @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
+              
+              
+              
+              <button title="Make it read" v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
+              <button title="Make it unread" v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
+              
+              <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
+              <button @click="deleteMail"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="mail-details-body">
+              <p>{{mail.info.txt}}</p>
+            </div>
+            <div class="mail-details-body-vid">
+              
+              <iframe v-if="mail.info.vidUrl" width="450" height="450" controls :src="mail.info.vidUrl" allowfullscreen>
+                </iframe>
+              </div>
+              <div v-if="mail.info.imgUrl" class="mail-details-body-img">
+                <img :src="mail.info.imgUrl"/>
+              </div>
+            </div>
+            </section>
+            `,
   data() {
     return {
       mail: null,

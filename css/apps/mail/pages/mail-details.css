@@ -1,3 +1,8 @@
+.mail-details{
+    display: flex;
+}
+
+
 .mail-details-header{
  display:flex;   
  align-items: center;
@@ -15,6 +20,12 @@
     align-items: center;
     
 }
+.mail-details-info button{
+    border: 0;
+    background-color: transparent;
+
+}
+
 
 .mail-details-body-img img{
     width:400px;

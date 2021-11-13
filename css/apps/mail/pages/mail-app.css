@@ -1,4 +1,8 @@
-.mail-app-main{
-    display: flex;
-
+.mail-app-main {
+  display: flex;
+  width: 100%;
+}
+.mail-app-filters {
+  width: 100%;
+  padding-inline-end: 30px;
 }

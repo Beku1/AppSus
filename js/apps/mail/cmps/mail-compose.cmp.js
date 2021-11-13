@@ -7,25 +7,26 @@ export default {
     
         <div  class="mail-compose-modal"> 
             <div class="mail-compose-modal-header">
-                <button title="Close compose" @click="closeModal"> X </button>
+                <button class="mail-compose-btn" title="Close compose" @click="closeModal"> X </button>
             </div>
-            <input @change="validateMail" v-model="mail.to" placeholder="To" />
-            <input v-model="mail.title" placeholder="Subject"/>
-            <textarea v-model="mail.info.txt" placeholder="Write your email here"></textarea>
+            <input class="compose-input" @change="validateMail" v-model="mail.to" placeholder="To" />
+            <input class="compose-input" v-model="mail.title" placeholder="Subject"/>
+            <textarea class="compose-input" v-model="mail.info.txt" placeholder="Write your email here"></textarea>
         
             
         </div>
         <div class="mail-compose-toolbar">
             <div class="mail-compose-toolbar-input">
-            <input type="url"  v-model="mail.info.imgUrl" v-if="imgInput" placeholder="Put your image URL here"/>
-            <input type="url" v-model="mail.info.vidUrl" v-if="vidInput"    placeholder="Put your video URL here"/>
+            <input class="mail-compose-input" type="url"  v-model="mail.info.imgUrl" v-if="imgInput" placeholder="Put your image URL here"/>
+            <input class="mail-compose-input" type="url" v-model="mail.info.vidUrl" v-if="vidInput"    placeholder="Put your video URL here"/>
             
             </div>
-            <button title="Send mail" @click="send">Send</button>
-            <button title="Add image URL"  @click="addContent('img')"><i class="fas fa-image"></i></button>
-            <button title="Add video URL" @click="addContent('vid')"><i class="fab fa-youtube"></i></button>
-            
-           
+            <div class="mail-compose-toolbar-btns">
+              
+              <button class="compose-mail-btn" title="Add image URL"  @click="addContent('img')"><i class="fas fa-image"></i></button>
+              <button class="compose-mail-btn" title="Send mail" @click="send">Send</button>
+              <button class="compose-mail-btn" title="Add video URL" @click="addContent('vid')"><i class="fab fa-youtube"></i></button>
+            </div>
         </div>
 </section>
     `,

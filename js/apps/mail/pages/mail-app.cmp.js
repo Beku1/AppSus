@@ -23,7 +23,7 @@ export default {
 </div>
           <mail-folder-list @foldered="setFolder"/>
         
-      <div class="filters">
+      <div class="mail-app-filters">
       <mail-filter @sorted="setSort" @filtered="setFilter" />
       
       <mail-list :mails="mails"/>
