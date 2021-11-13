@@ -29,6 +29,8 @@
     width:200px;
 }
 
+
+
 .fas.fa-book {
   color: rgb(45, 38, 148);
   transition: 0.3s;
@@ -60,4 +62,11 @@ transform: translateY(-3px);
 .fas.fa-address-card:hover {
   color: rgb(29, 201, 101);
 transform: translateY(-3px);
+}
+
+
+@media (max-width:600px){
+    .logo-img{
+        width:175px;
+    }
 }

@@ -14,11 +14,12 @@
 .mail-details-from-to{
     display:flex;
     flex-direction: column;
-    padding:0 100px;
+    
 }
 
 .mail-details-main-container{
     width:100%;
+ 
 }
 
 .mail-details-body-img{
