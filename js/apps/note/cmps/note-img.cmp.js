@@ -5,8 +5,8 @@ export default {
   <div class="note-img-container">
     <form @submit.prevent="addNoteImg">
       <div class="note-img-inputs">
-        <input class="input-txt" v-model="inputTitle" type="text" placeholder="Title"/>
-        <input class="input-txt" v-model="inputUrl" type="url" placeholder="Add a URL"/>
+        <input class="input-txt upper" v-model="inputTitle" type="text" placeholder="Title"/>
+        <input class="input-txt lower" v-model="inputUrl" type="url" placeholder="Add a URL"/>
     </div>
     <div>
       <button class="note-img-btn">Send</button>

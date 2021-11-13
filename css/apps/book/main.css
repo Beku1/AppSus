@@ -1,13 +1,4 @@
-.home-page{
-    display: flex;
-    background-color: aliceblue;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
 
-}
 
 .home-content-container{
     margin: 100px;;

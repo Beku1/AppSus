@@ -5,8 +5,8 @@ export default {
   <div class="note-img-container">
        <form @submit.prevent="addNoteTxt">
        <div class="note-img-inputs">
-            <input class="input-txt" v-model="inputTitle" type="text" placeholder="Title"/>
-            <input class="input-txt" v-model="inputTxt" type="text" placeholder="What's in your mind?"/>
+            <input class="input-txt upper" v-model="inputTitle" type="text" placeholder="Title"/>
+            <input class="input-txt lower" v-model="inputTxt" type="text" placeholder="What's in your mind?"/>
           </div>
           <div>
             <button class="note-txt-btn">Send</button>

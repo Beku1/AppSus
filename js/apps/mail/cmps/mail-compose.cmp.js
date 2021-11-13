@@ -14,6 +14,7 @@ export default {
             <textarea class="compose-input" v-model="mail.info.txt" placeholder="Write your email here"></textarea>
         
             
+          
         </div>
         <div class="mail-compose-toolbar">
             <div class="mail-compose-toolbar-input">

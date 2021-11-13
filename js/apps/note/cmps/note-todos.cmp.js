@@ -5,8 +5,8 @@ export default {
   <div class="note-todo-container">
     <form @submit.prevent="addNoteTodo">
       <div class="note-todo-inputs">
-        <input class="input-txt" v-model="todoTitle" type="text" placeholder="Title"/>
-        <input  class='input-txt' v-model="todo" type="text" placeholder="What do you need Todo?"/>
+        <input class="input-txt upper" v-model="todoTitle" type="text" placeholder="Title"/>
+        <input class='input-txt lower' v-model="todo" type="text" placeholder="What do you need Todo?"/>
       </div>
       <div class="note-todo-btns">
         <button class="note-todos-btn" type="submit">Send</button>
