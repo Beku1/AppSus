@@ -102,7 +102,7 @@ export const mails =[
   },
   
   {
-    id: "e107",
+    id: "e110",
     title: "Or is it??",
     info: {
       txt: "If you read everything in your email , you realize you hacked into an insane person's email , just watch out from having leaving own \'Foot Prints\' . Here is a cute picture ",
@@ -132,7 +132,7 @@ export const mails =[
     from:"appsus@appsus.com",
     status: "inbox",
   },{
-    id: "e107",
+    id: "e1599",
     title: "Hi, It\'s matt",
     info: {
       txt: "Whats up!! would love to catch up with you again.  ",
@@ -148,7 +148,7 @@ export const mails =[
     from:"user@appsus.com",
     status: "inbox",
   },{
-    id: "e107",
+    id: "e151515",
     title: "Daniel IS THE KING OF CSS",
     info: {
       txt: "The title is true",
@@ -164,7 +164,7 @@ export const mails =[
     from:"user@appsus.com",
     status: "inbox",
   },{
-    id: "e107",
+    id: "e1235",
     title: "Beny is the king of FUNCTIONALITY",
     info: {
       txt: "The title is true ",
