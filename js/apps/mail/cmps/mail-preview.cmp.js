@@ -11,9 +11,13 @@ template:`
         <p class="mail-preview-title">
             <button @click.prevent="starMail"><i class="fas fa-star" v-bind:class="fullStar"></i></button>
             <span class="preview-title"> {{mail.title}}</span></p>
-        <p class="mail-preview-txt">
-       {{showTxt}}  <span v-if="!hovered" class="mail-preview-date">  {{mailDate}} </span></p>
-        <mail-preview-toolbar :mail="mail" v-if="hovered"></mail-preview-toolbar>
+       
+            <div class="preview-date-txt">
+       <span class="preview-txt">{{showTxt}}</span>  <span v-if="!hovered" class="mail-preview-date">  {{mailDate}} </span>
+     <mail-preview-toolbar :mail="mail" v-if="hovered"></mail-preview-toolbar>
+  </div>
+          
+  
     </section>
     
 `,
