@@ -22,12 +22,12 @@
 }
 
 
-.fa-sticky-note{
+.fa-sticky-note.special{
 color:goldenrod;
 transition: 0.4s;
 }
 
-.fa-sticky-note:hover{
+.fa-sticky-note.special:hover{
     color:rgb(255, 217, 0);
     /* color:yellow */
     font-size:26px;

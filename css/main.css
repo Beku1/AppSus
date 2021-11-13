@@ -1,4 +1,4 @@
-/* IMPORTS CMPS*/
+
 @import './apps/mail/cmp/mail-filter.css';
 @import "../css/apps/mail/cmp/mail-preview.css";
 @import "../css/apps/mail/pages/mail-details.css";
@@ -16,7 +16,8 @@
 @import '../css/apps/keep/cmp/note-filter.css';
 @import './cmp/header.css';
 
-/* IMPORST PAGES */
+
+
 
 * {
   box-sizing: border-box;
