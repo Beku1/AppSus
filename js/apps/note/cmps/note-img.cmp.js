@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     addNoteImg() {
+      if( !this.inputTitle && !this.inputUrl )return
       noteServies.createNewNoteImg(this.inputUrl, this.inputTitle).then(() => {
         noteServies.query().then((note) => {
           this.$emit("getNewNotes", [...note]);

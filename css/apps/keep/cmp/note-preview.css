@@ -150,7 +150,7 @@
   z-index: 2;
   background-color: white;
   width: 500px;
-  height: 200px;
+  min-height: 200px;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
@@ -161,17 +161,35 @@
   justify-content: space-around;
   align-items: center;
   z-index: 50;
+  
 }
 
 .edit-container {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+}
+.edit-input-title{
+  height: 30px;
+  text-align: center;
+  border: 0;
+  font-size: 1.2rem;
 }
 
-.toolbar-note-preview{
+.edit-input-content{
+  height: 55px;
+  width: 400px;
+  border: 0;
+  text-align: center;
+}
+
+
+.toolbar-note-preview {
   opacity: 0;
   transition: 0.3s;
 }
-.toolbar-note-preview.onme{
+.toolbar-note-preview.onme {
   opacity: 1;
 }
-

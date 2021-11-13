@@ -1,11 +1,11 @@
-import { mailService } from '../services/mail-service.cmp.js'
+import { mailService } from "../services/mail-service.cmp.js";
 // import mailCompose from '../cmps/mail-compose.cmp.js'
 
-import mailList from '../cmps/mail-list.cmp.js'
-import mailFolderList from '../cmps/mail-folder-list.cmp.js'
-import { eventBus } from '../../../services/event-bus-service.js'
-import userMsg from '../../../cmps/user-msg.cmp.js'
-import mailFilter from '../cmps/mail-filter.cmp.js'
+import mailList from "../cmps/mail-list.cmp.js";
+import mailFolderList from "../cmps/mail-folder-list.cmp.js";
+import { eventBus } from "../../../services/event-bus-service.js";
+import userMsg from "../../../cmps/user-msg.cmp.js";
+import mailFilter from "../cmps/mail-filter.cmp.js";
 
 export default {
   components: {
@@ -17,86 +17,93 @@ export default {
   },
   template: `
     <section class="mail-app-main">
-        <user-msg/>
-         <router-view></router-view>
-        <mail-filter @sorted="setSort" @filtered="setFilter" />
-         <mail-folder-list @foldered="setFolder"/>
-        <mail-list :mails="mails"/>
+      <user-msg/>
+      <div>
+        <router-view></router-view>
+</div>
+          <mail-folder-list @foldered="setFolder"/>
+        
+      <div class="filters">
+      <mail-filter @sorted="setSort" @filtered="setFilter" />
+      
+      <mail-list :mails="mails"/>
+   
+    </div>
     </section>
 `,
   data() {
     return {
       mails: null,
       filterBy: {
-        read: '',
-        txt: '',
-        folder: 'inbox',
+        read: "",
+        txt: "",
+        folder: "inbox",
         isStared: false,
       },
       sortBy: {
-        type: 'date',
+        type: "date",
         isBackwards: true,
       },
-    }
+    };
   },
   created() {
-    this.loadMails().then(() => this.setFilter(this.filterBy))
-    eventBus.$on('getMails', this.loadMails)
+    this.loadMails().then(() => this.setFilter(this.filterBy));
+    eventBus.$on("getMails", this.loadMails);
   },
   destroyed() {
-    eventBus.$off('getMails')
+    eventBus.$off("getMails");
   },
   methods: {
     loadMails(isGoMail = false) {
-        // if(isGoMail)
+      // if(isGoMail)
       return mailService.query().then((mails) => {
-        this.mails = mails
-        let unreadCount = 0
+        this.mails = mails;
+        let unreadCount = 0;
         this.mails.forEach((mail) => {
-          if (!mail.isRead) unreadCount++
-        })
-        eventBus.$emit('unreadCount', unreadCount)
-        return mails
-      })
+          if (!mail.isRead) unreadCount++;
+        });
+        eventBus.$emit("unreadCount", unreadCount);
+        return mails;
+      });
     },
     setFolder(folderType) {
-      if (folderType === 'star') {
-        this.filterBy.isStared = true
-      } else if (folderType !== 'star') {
-        this.filterBy.folder = folderType
-        this.filterBy.isStared = false
+      if (folderType === "star") {
+        this.filterBy.isStared = true;
+      } else if (folderType !== "star") {
+        this.filterBy.folder = folderType;
+        this.filterBy.isStared = false;
       }
 
-      this.setFilter(this.filterBy)
+      this.setFilter(this.filterBy);
     },
 
     setFilter(filterBy) {
-      filterBy.folder = this.filterBy.folder
+      filterBy.folder = this.filterBy.folder;
       mailService.mailFilterBy(filterBy, this.mails).then((mails) => {
         if (this.filterBy.isStared) {
           return (mails = mailService
             .mailFilterByStar(this.mails)
             .then((mails) => {
-              return (this.mails = mails)
-            }))
+              return (this.mails = mails);
+            }));
         }
 
-        this.mails = mails
-      })
+        this.mails = mails;
+      });
     },
     setSort(sortBy) {
-      if (sortBy.type === 'title')
-        this.mails.sort((a, b) => a.title.localeCompare(b.title))
+      if (sortBy.type === "title")
+        this.mails.sort((a, b) => a.title.localeCompare(b.title));
       else {
         this.mails.sort((a, b) => {
-          a.sentAt - b.sentAt
-        })
+          a.sentAt - b.sentAt;
+        });
       }
-      if (sortBy.isBackwards) this.mails.reverse()
+      if (sortBy.isBackwards) this.mails.reverse();
     },
   },
   computed: {},
-}
+};
 
 // filterBy:{
 //     txt:null,

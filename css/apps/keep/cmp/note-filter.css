@@ -1,8 +1,23 @@
 .filter-container {
-  background-color: green;
-  width: 85%;
-  height: 50px;
+  width: 100%;
+  height: 72px;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-search-bar {
+  height: 40px;
+  width: 40%;
+  border: 1px solid #dadce0;
+  padding-inline-start: 2%;
+  border-radius: 10px;
+  background-color: #f1f3f4;
+}
+
+.filter-search-bar:focus {
+  background-color: #fff;
 }
