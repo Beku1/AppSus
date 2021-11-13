@@ -8,7 +8,7 @@
 @import "./apps/mail/cmp/mail-folder-list.css";
 @import "./apps/mail/pages/mail-app.css";
 @import "./apps/mail/cmp/mail-compose.css";
-@import "/css/apps/keep/cmp/note-toolbar.css";
+@import "./css/apps/keep/cmp/note-toolbar.css";
 @import "./apps/keep/cmp/note-img.css";
 @import "./apps/keep/cmp/note-todos.css";
 @import "./cmp/user-msg.css";
