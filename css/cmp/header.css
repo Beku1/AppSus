@@ -14,6 +14,17 @@
    transform: translateY(-3px);
 }
 
+.app-header-mail{
+    position:relative;
+}
+
+.mail-unread{
+    position: absolute;
+    bottom: 28px;
+    left: 36px;
+}
+
+
 .logo-img{
     width:200px;
 }
