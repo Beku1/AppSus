@@ -88,6 +88,19 @@ function createNote() {
       },
     },
     {
+      id: "n99",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://64.media.tumblr.com/b65da6c52e5bb0007ac53453859644c4/tumblr_neqwha5Cqy1sgl0ajo1_500.gifv",
+        title: "When I think of a simple solution to a complicated problem",
+      },
+      style: {
+        backgroundColor: "#f28b82",
+      },
+      createdAt: getDate(Date.now()),
+    },
+    {
       id: "n105",
       type: "note-txt",
       isPinned: false,
@@ -118,8 +131,34 @@ function createNote() {
       type: "note-img",
       isPinned: false,
       info: {
-        imgUrl: "https://img.devrant.com/devrant/rant/r_2028937_r7QZN.jpg",
-        title: "Amazing Team",
+        imgUrl: "http://www.nikola-breznjak.com/blog/wp-content/uploads/2014/10/scepticKid.jpg",
+        title: "Damn",
+      },
+      style: {
+        backgroundColor: "#ccff90",
+      },
+      createdAt: getDate(Date.now()),
+    },
+    {
+      id: "n113",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://media3.giphy.com/media/2vmgLNPKu2dZ4oGPI9/giphy.gif?cid=e1bb72ff5a9f8e354463436a779de5dd",
+        title: "Last gif for today",
+      },
+      style: {
+        backgroundColor: "#ccff90",
+      },
+      createdAt: getDate(Date.now()),
+    },
+    {
+      id: "n120",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://clipchamp.com/static/88bb8fc56d817b40f1772ad4e615eaae/Simpson-GIF.gif",
+        title: "Me at the last day of the sprint",
       },
       style: {
         backgroundColor: "#ccff90",
@@ -139,6 +178,7 @@ function createNote() {
       },
       createdAt: getDate(Date.now()),
     },
+   
     {
       id: "n103",
       type: "note-todos",
@@ -147,17 +187,30 @@ function createNote() {
         title: "Get my stuff together",
         todos: [
           {
-            txt: "Driving liscence",
+            txt: "Make Todos",
             doneAt: getDate(Date.now()),
             checked: false,
           },
-          { txt: "Coding power", doneAt: getDate(Date.now()), checked: false },
+          { txt: "Don't forget to sleep", doneAt: getDate(Date.now()), checked: false },
         ],
       },
       createdAt: getDate(Date.now()),
       style: {
         backgroundColor: "#d7aefb",
       },
+    },
+    {
+      id: "n108",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://c.tenor.com/RQ4eycoIn5sAAAAd/debugging-we-bare-bears.gif",
+        title: "Debug my code be like:",
+      },
+      style: {
+        backgroundColor: "#ccff90",
+      },
+      createdAt: getDate(Date.now()),
     },
     {
       id: "n104",

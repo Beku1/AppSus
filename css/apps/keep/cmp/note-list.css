@@ -10,8 +10,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: flex-end;
-  gap: 14px;
+  justify-content: center;
+  gap: 25px;
   margin-top: 20px;
-  padding: 0 60px;
+  padding: 0px 25px;
 }
