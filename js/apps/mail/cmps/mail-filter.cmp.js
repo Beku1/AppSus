@@ -28,8 +28,8 @@ export default {
     
 </div>
 <div class="sorting">
-          <button @click="sortMails('title')">Sort by title</button>
-          <button @click="sortMails('date')">Sort by date</button>
+          <button title="Sort by title" @click="sortMails('title')">Sort by title</button>
+          <button title="Sort by date" @click="sortMails('date')">Sort by date</button>
          </div>
     </section>
     `,

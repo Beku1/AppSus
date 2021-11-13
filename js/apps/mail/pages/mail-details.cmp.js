@@ -15,7 +15,7 @@ export default {
         <mail-folder-list :mail="mail"/>
         </div>
         <div class="mail-details-header" >
-    <h3>{{mail.title}} <button >Label</button></h3>
+    <h3>{{mail.title}} </h3>
    
     <div>
     <label v-show="isLabeled" v-for="label in mail.info.labels"> {{label}}</label>
@@ -25,12 +25,12 @@ export default {
    <span > From: {{mail.from}}</span><span>To: {{mail.to}}</span>
  </div>
     <p> {{whenSent}} </p>
-    <button @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
+    <button title="Star this mail" @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
     <!-- TO DO REPLY -->
     
     <!-- <button><i class="fas fa-reply"></i></button>   -->
-    <button v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
-    <button v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
+    <button title="Make it read" v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
+    <button title="Make it unread" v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
     <!-- TO DO Merg with Note -->
     <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
     <button @click="deleteMail"><i class="fas fa-trash-alt"></i></button>
@@ -40,7 +40,7 @@ export default {
         </div>
         <div class="mail-details-body-vid">
           
-          <iframe v-if="mail.info.vidUrl" width="450" controls :src="mail.info.vidUrl">
+          <iframe v-if="mail.info.vidUrl" width="450" height="450" controls :src="mail.info.vidUrl" allowfullscreen>
         </iframe>
         </div>
         <div v-if="mail.info.imgUrl" class="mail-details-body-img">

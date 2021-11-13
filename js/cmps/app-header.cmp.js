@@ -12,7 +12,7 @@ export default {
           <div class="app-header-links">      
               <router-link to="/books"><i class="fas fa-book"></i></router-link> 
               <router-link to="/note"><i class="fas fa-sticky-note special"></i></i></router-link>
-              <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope"></i><span class="mail-unread">{{unreadCount}}</span></div></router-link>
+              <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope special"></i><span class="mail-unread">{{unreadCount}}</span></div></router-link>
           </div>   
           <div class="app-header-about">   
             <router-link to="/about"><i class="fas fa-address-card"></i></router-link>

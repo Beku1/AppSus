@@ -31,29 +31,14 @@ export default {
     methods:{
      mailsortBy(sortBy){
      this.sortBy = sortBy
-     }
+     },
+     starMail() {
+        this.mail.isStared = !this.mail.isStared
+       
+        mailService.put(this.mail)
+      },
     },
     computed:{
-//         setSort(){
-//             let order =this.sortBy.isBackwards ? 1 : -1
-//             let sorted
-//             if(this.sortBy.type === 'title') {
-//                sorted = this.mails.sort((a,b)=>{
-//                     let results = a.title > b.title ? -1 : a.title < b.title ? 1: 0
-//                     return results*order
-//                 })
-//             }
-//             else {
-//                 sorted = this.mails.sort((a,b)=>{
-//                   let results = a.sentAt > b.sentAt ? -1 : a.sentAt < b.sentAt ? 1 : 0
-//                     return results * order
-//                 })
-//             }
-//             return sorted
-            
-  
-//         },
-//     },
-// }
+
     }
 }

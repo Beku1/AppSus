@@ -1,12 +1,12 @@
 /* NEED TO FIX MOVING ICONS ON HEADER */
 
-.fas.fa-envelope{
+.fas.fa-envelope.special{
     color:rgb(148, 26, 26);
     transition: 0.4s;
    
 }
 
-.fas.fa-envelope:hover{
+.fas.fa-envelope.special:hover{
     font-size:26px;
     color:red;
 }

@@ -7,7 +7,7 @@ export default {
     
         <div  class="mail-compose-modal"> 
             <div class="mail-compose-modal-header">
-                <button @click="closeModal"> X </button>
+                <button title="Close compose" @click="closeModal"> X </button>
             </div>
             <input @change="validateMail" v-model="mail.to" placeholder="To" />
             <input v-model="mail.title" placeholder="Subject"/>
@@ -21,10 +21,10 @@ export default {
             <input type="url" v-model="mail.info.vidUrl" v-if="vidInput"    placeholder="Put your video URL here"/>
             
             </div>
-            <button @click="send">Send</button>
-            <button @click="addContent('img')"><i class="fas fa-image"></i></button>
-            <button @click="addContent('vid')"><i class="fab fa-youtube"></i></button>
-            <button @click="showLabel">Labels</button>
+            <button title="Send mail" @click="send">Send</button>
+            <button title="Add image URL"  @click="addContent('img')"><i class="fas fa-image"></i></button>
+            <button title="Add video URL" @click="addContent('vid')"><i class="fab fa-youtube"></i></button>
+            
            
         </div>
 </section>
@@ -45,12 +45,16 @@ export default {
     this.imgInput = false
     this.vidInput = false
     this.labelInput = false
+    eventBus.$emit('modelOpen',true)
     this.getNewMail()
       this.interval = setInterval(()=>{
        mailService.put(this.mail)
       },5000)
   },
-  destroyed() {},
+  destroyed() {
+      clearInterval(this.interval)
+    eventBus.$emit("modelOpen", false);
+  },
   methods: {
     closeModal() {
       this.$emit('close')
@@ -70,11 +74,7 @@ export default {
         this.vidInput = !this.vidInput
       }
     },
-    showLabel() {
-      this.labelInput = !this.labelInput
-      var a = /^\s+$/.test(this.mail.title)
-     
-    },
+   
     makeDraft(){
         mailService.put(this.mail)
     },
