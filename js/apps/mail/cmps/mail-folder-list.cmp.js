@@ -11,19 +11,20 @@ export default {
     <nav class="mail-folder-list-main">
      
         <mail-compose v-if="isCompose"  @close="closeModal"/>
-        <button title="Compose Mail" class="compose-button" @click="openCompose">Compose</button>
+        <button  title="Compose Mail" class="compose-btn" @click="openCompose">  <span class="compose-plus"></span>Compose</button>
         
 
-      <button title="Filter by Inbox" class="inbox" @click="setFolder('inbox')"><i class="fas fa-inbox"></i></button>
+      <button title="Filter by Inbox" class="inbox folder-btn-order" @click="setFolder('inbox')"><i class="fas fa-inbox"></i><div class="folder-btn-txt">Inbox</div></button>
 
-      <button title="Filter by Starred mails" class="starred" @click="setFolder('star')"><i class="fas fa-star"></i></button>
+      <button title="Filter by Starred mails" class="starred folder-btn-order" @click="setFolder('star')"><i class="fas fa-star"></i><div class="folder-btn-txt">Starred</div></button>
 
-       <button title="Filter by Sent" class="sent" @click="setFolder('sent')"><i class="fas fa-chevron-circle-right"></i></i></button>
+       <button title="Filter by Sent" class="sent folder-btn-order" @click="setFolder('sent')"><i class="fas fa-chevron-circle-right"></i><div class="folder-btn-txt">Sent</div></button>
 
-      <button  title="Filter by Draft" class="draft" @click="setFolder('draft')"><i class="fas fa-sticky-note"></i></button>
+      <button  title="Filter by Draft" class="draft folder-btn-order" @click="setFolder('draft')"><i class="fas fa-sticky-note"></i><div class="folder-btn-txt">Drafts</div></button>
 
-      <button title="Filter by Trash" class="trash" @click="setFolder('trash')"><i class="fas fa-trash-alt"></i></button>
+      <button title="Filter by Trash" class="trash folder-btn-order" @click="setFolder('trash')"><i class="fas fa-trash-alt"></i><div class="folder-btn-txt">Trash</div></button>
 
+    
      
     </nav>
     `,
