@@ -25,12 +25,12 @@ export default {
         <div class="note-app-toolbar">
           <note-toolbar @openCurrField="checkField"></note-toolbar>
       </div>
+      <note-filter @filters="setFilter"></note-filter>
       <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
       <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
       <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
       <note-vid  v-if="isVid" @getNewNotes="getNotes"></note-vid>
 
-     <note-filter @filters="setFilter"></note-filter>
             <note-list v-if="notes" :notes="notes"></note-list>
         </div>
       `,

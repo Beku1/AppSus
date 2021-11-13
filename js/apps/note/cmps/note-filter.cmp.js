@@ -3,8 +3,9 @@ import { noteServies } from "../services/note-service.js";
 export default {
   template: `
        <div class="filter-container">    
-         <input v-model="filterBy.txt" @change="filter" type="search" spellcheck="false">
+         <input class="filter-search-bar" placeholder="Search..." v-model="filterBy.txt" @change="filter" type="search" spellcheck="false">
          <div class="select-by-types">
+           <span> Filter By :</span>
            <select v-model="filterBy.type" @change="filter">
              <option value=''>All</option>
              <option value="note-img">Images</option>

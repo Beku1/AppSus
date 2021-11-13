@@ -6,12 +6,13 @@
   align-items: center;
 }
 
-.note-app-main form{
-    height: 70px;
+.note-app-main form {
+  height: 70px;
 }
 .note-app-toolbar {
   position: relative;
   width: 305px;
   display: flex;
+  background: green;
+  top: 62px;
 }
-

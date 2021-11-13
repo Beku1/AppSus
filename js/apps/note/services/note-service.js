@@ -67,6 +67,7 @@ function createNote() {
       isPinned: false,
       info: {
         txt: "Fullstack Me Baby!",
+        title:'something'
       },
       createdAt: getDate(Date.now()),
       style: {

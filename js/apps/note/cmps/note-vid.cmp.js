@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     addNoteVid() {
+      if( !this.inputTitle && !this.inputUrl )return
       noteServies.createNewNoteVid(this.inputUrl, this.inputTitle).then(() => {
         noteServies.query().then((note) => {
           this.$emit("getNewNotes", [...note]);

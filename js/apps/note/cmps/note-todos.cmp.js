@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     addNoteTodo() {
+      if( !this.todoTitle && !this.todo )return
       noteServies.createNewNoteTodos(this.todoTitle, this.todos).then(() => {
         noteServies.query().then((note) => {
           this.$emit("getNewNotes", [...note]);
