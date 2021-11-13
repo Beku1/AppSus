@@ -2,7 +2,8 @@ import { storageService } from "./async-storage-service.js"
 
 
 export const basicStorageService = {
-    getUnreadCount
+    getUnreadCount,
+    watchToEmbed
 }
 
 function getUnreadCount(){
@@ -16,3 +17,14 @@ return storageService.query('mails')
     return count
 })
 }
+function watchToEmbed(vidUrl){
+    console.log('origin',vidUrl);
+  
+    if(vidUrl.includes('watch')){
+      
+       vidUrl = vidUrl.replace(/watch\?v=/g, "embed/")
+    }
+    console.log('from new function',vidUrl);
+    return vidUrl
+  
+  }

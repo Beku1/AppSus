@@ -1,5 +1,4 @@
-
-@import './apps/mail/cmp/mail-filter.css';
+@import "./apps/mail/cmp/mail-filter.css";
 @import "../css/apps/mail/cmp/mail-preview.css";
 @import "../css/apps/mail/pages/mail-details.css";
 @import "../css/apps/keep/cmp/note-preview.css";
@@ -13,11 +12,8 @@
 @import "./apps/keep/cmp/note-todos.css";
 @import "./cmp/user-msg.css";
 @import "./animation.css";
-@import '../css/apps/keep/cmp/note-filter.css';
-@import './cmp/header.css';
-
-
-
+@import "../css/apps/keep/cmp/note-filter.css";
+@import "./cmp/header.css";
 
 * {
   box-sizing: border-box;
@@ -29,7 +25,7 @@ body {
   width: 100%;
 }
 
-li{
+li {
   list-style: none;
 }
 
@@ -65,7 +61,7 @@ li{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+
   height: 65px;
   padding: 0 20px;
   margin-bottom: 20px;
@@ -74,13 +70,13 @@ li{
   margin-top: -1px;
 }
 .app-header-nav a {
-  font-family: 'Product Sans',Arial,sans-serif;
+  font-family: "Product Sans", Arial, sans-serif;
   margin: 0 10px;
   text-decoration: none;
   color: #5f6368;
 }
 
-.app-header-nav a:active{
+.app-header-nav a:active {
   text-decoration: underline;
   text-decoration-color: #5f6368;
 }
@@ -93,4 +89,19 @@ li{
 }
 .app-header-links a {
   margin: 0 10px;
+}
+
+/* helpers */
+.pos-re {
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #00000054;
+  z-index: 20;
 }

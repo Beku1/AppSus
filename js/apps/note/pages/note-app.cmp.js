@@ -4,7 +4,9 @@ import noteList from "../cmps/note-list.cmp.js";
 import noteImg from "../cmps/note-img.cmp.js";
 import noteTodos from "../cmps/note-todos.cmp.js";
 import noteToolbar from "../cmps/note-toolbar.cmp.js";
+import noteVid from '../cmps/note-vid.cmp.js';
 import { eventBus } from "../../../services/event-bus-service.js";
+import noteFilter from "../cmps/note-filter.cmp.js";
 
 export default {
   props: [],
@@ -15,30 +17,20 @@ export default {
     noteImg,
     noteTodos,
     noteToolbar,
+    noteVid,
+    noteFilter
   },
   template: `
         <div class="note-app-main">
         <div class="note-app-toolbar">
           <note-toolbar @openCurrField="checkField"></note-toolbar>
       </div>
-       <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
-       <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
-       <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
+      <note-txt v-if="isTxt" @getNewNotes="getNotes"></note-txt>
+      <note-img v-if="isImg" @getNewNotes="getNotes"></note-img>
+      <note-todos  v-if="isTodos" @getNewNotes="getNotes"></note-todos>
+      <note-vid  v-if="isVid" @getNewNotes="getNotes"></note-vid>
 
-       <!-- note-filter - you have empty file in note -> cmps -> note-filter.cmp.js -->
-       <div class="filter-container">    
-         <input type="text">
-         <div class="select-by-types">
-           <select>
-             <option>All</option>
-             <option>Images</option>
-             <option>Text</option>
-             <option>Todos</option>
-             <option>Videos</option>
-           </select>
-          </div>
-       </div>
-       <!--  -->
+     <note-filter @filters="setFilter"></note-filter>
             <note-list v-if="notes" :notes="notes"></note-list>
         </div>
       `,
@@ -50,6 +42,11 @@ export default {
       isTxt: true,
       isImg: false,
       isTodos: false,
+      isVid:false,
+      filterBy:{
+        type:null,
+        txt: '',
+      }
     };
   },
   created() {
@@ -60,13 +57,21 @@ export default {
   destroyed() {
     eventBus.$off("loadNotes");
   },
+
   methods: {
+    setFilter(filterBy){
+      this.filterBy = filterBy
+      noteServies.noteFilterBy(filterBy)
+      .then((notes)=>{
+        this.notes = notes
+      })
+    },
     changeNotes(notes){
       this.notes= notes
     },
     loadNotes(notes) {
       noteServies.query().then((notes) => {
-        console.log(notes);
+
         this.notes = notes;
       });
     },
@@ -79,10 +84,11 @@ export default {
         });
       }
     },
-    checkField(isTxt, isImg, isTodos) {
+    checkField(isTxt, isImg, isTodos,isVid) {
       this.isTxt = isTxt;
       this.isImg = isImg;
       this.isTodos = isTodos;
+      this.isVid = isVid
     },
   },
   computed: {},
