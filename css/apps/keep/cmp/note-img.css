@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 74px;
+  height: 70px;
 }
 
 .note-img-btn {
@@ -26,4 +26,11 @@
   border: 1px solid rgb(180, 180, 180);
   background-color: rgb(245, 245, 245);
   border-radius: 50px;
+}
+
+.upper{
+  border-bottom: 0;
+}
+.lower{
+  border-top: 0;
 }

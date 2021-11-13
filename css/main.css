@@ -41,8 +41,13 @@ li {
 
 /* homepage */
 
-.icon-home-page{
-  width:50px;
+.icon-home-page {
+  width: 50px;
+}
+.home-page {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
 }
 
 .home-page-hero {
@@ -51,7 +56,7 @@ li {
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 250px;
+  height: 500px;
   align-items: center;
 }
 
@@ -92,7 +97,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 }
 .app-header-links a {
   margin: 0 10px;
@@ -112,3 +116,4 @@ li {
   background-color: #00000054;
   z-index: 20;
 }
+
