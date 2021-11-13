@@ -13,7 +13,10 @@ template:`
             <span class="preview-title"> {{mail.title}}</span></p>
        
             <div class="preview-date-txt">
-       <span class="preview-txt">{{showTxt}}</span>  <span v-if="!hovered" class="mail-preview-date">  {{mailDate}} </span>
+       <span class="preview-txt">{{showTxt}}</span> 
+       
+       <span v-if="!hovered" class="mail-preview-date">  {{mailDate}} </span>
+
      <mail-preview-toolbar :mail="mail" v-if="hovered"></mail-preview-toolbar>
   </div>
           
@@ -35,7 +38,7 @@ methods:{
 },
 computed:{
     showTxt(){
-    if(this.mail.info.txt.length > 50) return this.mail.info.txt.substring(0,47)+'...'
+    if(this.mail.info.txt.length > 30) return this.mail.info.txt.substring(0,30)+'...'
     return this.mail.info.txt
     },
     isUnreadMail(){

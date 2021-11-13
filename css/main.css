@@ -41,8 +41,13 @@ li {
 
 /* homepage */
 
+.home-page-txt{
+  font-family:'-webkit-pictograph';
+  letter-spacing: 5px;
+}
+
 .icon-home-page {
-  width: 50px;
+  width: 350px;
 }
 .home-page {
   display: flex;
@@ -99,6 +104,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-inline-end: 5%;
 }
 .app-header-links a {
   margin: 0 10px;

@@ -32,8 +32,10 @@
 }
 
 
-
-
+.no-border-icons{
+ border:0;
+ background-color:transparent;
+}
 
 .mail-preview-main.unread{
     font-weight: 600;
@@ -44,6 +46,7 @@
 .mail-preview-date{
     color:black;
     font-weight: 600;
+    
 }
 
 .mail-preview-main:not(.unread){
