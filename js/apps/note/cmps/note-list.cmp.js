@@ -8,19 +8,20 @@ export default {
     <div class="note-list-notes">
     <div v-for ="note in notes">
     <note-preview :note="note"></note-preview>
+  
     </div>
     </div>
     </section>
     `,
   data() {
     return {
- 
+    
     };
   },
   methods: {
+ 
 
   },
   created() {},
-  methods: {},
-  //   computed:{},
+    computed:{},
 };

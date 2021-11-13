@@ -6,7 +6,7 @@ export default {
   props: ["note"],
 
   template: ` 
-  <section> 
+  <section class="pos-re"> 
     <transition name="fade">
     <div v-if="toggleColors" class="color-container">
       <div @click="changeColor('#d7aefb')" class="purple"></div>
@@ -69,7 +69,7 @@ export default {
       let title = 'No title'
       let content = ''
      
-      console.log(type)
+    
       if(type === 'img')  content = this.note.info.imgUrl
       if(type === 'txt')  content = this.note.info.txt
       if(type === 'vid')  content = this.note.info.vidUrl
