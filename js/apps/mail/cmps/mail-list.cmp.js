@@ -32,11 +32,7 @@ export default {
      mailsortBy(sortBy){
      this.sortBy = sortBy
      },
-     starMail() {
-        this.mail.isStared = !this.mail.isStared
-       
-        mailService.put(this.mail)
-      },
+    
     },
     computed:{
 

@@ -14,7 +14,9 @@
    transform: translateY(-3px);
 }
 
-
+.logo-img{
+    width:200px;
+}
 
 .fas.fa-book {
   color: rgb(45, 38, 148);

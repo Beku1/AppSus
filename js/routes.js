@@ -4,6 +4,8 @@ import mailApp from './apps/mail/pages/mail-app.cmp.js'
 import mailDetails from './apps/mail/pages/mail-details.cmp.js'
 import noteAppCmp from './apps/note/pages/note-app.cmp.js'
 import mailCompose from './apps/mail/cmps/mail-compose.cmp.js'
+import bookApp from './apps/book/pages/book-app.cmp.js'
+import bookDetails from './apps/book/pages/book-details.cmp.js'
 
 
 
@@ -43,8 +45,17 @@ const routes = [
        
       }
       
-    ]
+    ],
+    
   },
+  {
+    path:'/book',
+    component:bookApp
+},
+{
+    path:'/book/:bookId',
+    component:bookDetails
+}
   // {
   //     path: '/books',
   //     component: bookApp

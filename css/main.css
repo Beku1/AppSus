@@ -1,4 +1,5 @@
 @import "./apps/mail/cmp/mail-filter.css";
+
 @import "../css/apps/mail/cmp/mail-preview.css";
 @import "../css/apps/mail/pages/mail-details.css";
 @import "../css/apps/keep/cmp/note-preview.css";
@@ -14,6 +15,7 @@
 @import "./animation.css";
 @import "../css/apps/keep/cmp/note-filter.css";
 @import "./cmp/header.css";
+@import "./apps/book/main.css";
 
 * {
   box-sizing: border-box;
@@ -40,8 +42,13 @@ li {
 
 /* homepage */
 
+.icon-home-page{
+  width:50px;
+}
+
 .home-page-hero {
   background-color: lightblue;
+  flex-direction: column;
   display: flex;
   width: 100%;
   justify-content: center;

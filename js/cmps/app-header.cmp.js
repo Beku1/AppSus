@@ -2,15 +2,16 @@ import { router } from "../routes.js";
 import { eventBus } from '../services/event-bus-service.js'
 import { basicStorageService } from "../services/storage-service.js";
 
+
 export default {
     template: `
       <header class="app-header-main">
         <nav class="app-header-nav">
           <div class="app-header-logo">          
-            <router-link to="/">Logo</router-link>
+            <router-link to="/"><img class="logo-img" src="./../../img/logo.png"/></router-link>
           </div>    
           <div class="app-header-links">      
-              <router-link to="/books"><i class="fas fa-book"></i></router-link> 
+              <router-link to="/book"><i class="fas fa-book"></i></router-link> 
               <router-link to="/note"><i class="fas fa-sticky-note special"></i></i></router-link>
               <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope special"></i><span class="mail-unread">{{unreadCount}}</span></div></router-link>
           </div>   
@@ -23,6 +24,7 @@ export default {
       `,
       data(){
         return{
+          img:'..',
           unreadCount:null
         }
       },
