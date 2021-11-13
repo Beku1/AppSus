@@ -32,8 +32,10 @@
 }
 
 
-
-
+.no-border-icons{
+ border:0;
+ background-color:transparent;
+}
 
 .mail-preview-main.unread{
     font-weight: 600;
