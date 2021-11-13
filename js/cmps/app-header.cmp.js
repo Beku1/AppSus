@@ -1,6 +1,6 @@
 import { router } from "../routes.js";
 import { eventBus } from '../services/event-bus-service.js'
-
+import { basicStorageService } from "../services/storage-service.js";
 
 export default {
     template: `
@@ -10,12 +10,12 @@ export default {
             <router-link to="/">Logo</router-link>
           </div>    
           <div class="app-header-links">      
-              <router-link to="/books">Books</router-link> 
-              <router-link to="/note">Note</router-link>
-              <router-link to="/mail">Mail<span>{{unreadCount}}</span></router-link>
+              <router-link to="/books"><i class="fas fa-book"></i></router-link> 
+              <router-link to="/note"><i class="fas fa-sticky-note"></i></i></router-link>
+              <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope"></i><span class="mail-unread">{{unreadCount}}</span></div></router-link>
           </div>   
           <div class="app-header-about">   
-            <router-link to="/about">About</router-link>
+            <router-link to="/about"><i class="fas fa-address-card"></i></router-link>
           </div>   
               </nav>
 
@@ -27,6 +27,10 @@ export default {
         }
       },
     created() {
+    basicStorageService.getUnreadCount()
+     .then((count)=>{
+       this.getUnread(count)
+     })
        eventBus.$on('unreadCount',this.getUnread)
        eventBus.$on('unreadChange',this.unreadChange)
     },

@@ -20,3 +20,11 @@
     width:400px;
     height:400px;
 }
+
+.fas.fa-star:hover{
+    color:gold;
+}
+
+.fas.fa-star.full{
+    color: gold;
+}

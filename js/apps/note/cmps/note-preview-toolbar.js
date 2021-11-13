@@ -1,5 +1,6 @@
 import { noteServies } from "../services/note-service.js";
 import { eventBus } from "../../../services/event-bus-service.js";
+import { router } from "../../../routes.js";
 
 export default {
   props: ["note"],
@@ -21,7 +22,7 @@ export default {
            <div class="continer"><i @click="pinToggle" :class="{pinWhite: !note.isPinned , pinBlack : note.isPinned}"  ></i></div>
 
             
-            <div><i class="fas fa-paper-plane"></i></div>
+            <div @click="composeMail" ><i class="fas fa-paper-plane"></i></div>
 
             <div @click="toggleColor">
               <i class="fas fa-palette"></i>
@@ -61,6 +62,28 @@ export default {
       this.isPinned = this.note.isPinned;
 
       this.sortPined();
+    },
+    composeMail(){
+      let type = this.note.type.split('-')
+      type = type[1]
+      let title = 'No title'
+      let content = ''
+     
+      console.log(type)
+      if(type === 'img')  content = this.note.info.imgUrl
+      if(type === 'txt')  content = this.note.info.txt
+      if(type === 'vid')  content = this.note.info.vidUrl
+      if(type === 'todos') {
+        this.note.info.todos.forEach(todo=>{
+          if(todo.checked) var check = ' DONE   '
+          else var check = ' NEED TO DO   '
+          content += todo.txt + check 
+        })
+        
+      } 
+      if(this.note.info.title) title = this.note.info.title
+      let query = `mail/compose/?type=${type}&content=${content}&title=${title}`
+      router.push(query)
     },
 
     sortPined() {

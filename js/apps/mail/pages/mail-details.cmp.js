@@ -2,6 +2,7 @@ import { mailService } from '../services/mail-service.cmp.js'
 import { eventBus } from '../../../services/event-bus-service.js'
 import mailFolderList from '../cmps/mail-folder-list.cmp.js'
 
+
 export default {
   components: {
     mailFolderList,
@@ -9,7 +10,7 @@ export default {
   template: `
     
     <section class="mail-details" v-if="mail">
-    <router-view></router-view>
+   
         <div>
         <mail-folder-list :mail="mail"/>
         </div>
@@ -24,15 +25,15 @@ export default {
    <span > From: {{mail.from}}</span><span>To: {{mail.to}}</span>
  </div>
     <p> {{whenSent}} </p>
-    <button @click="starMail">star</button>
+    <button @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
     <!-- TO DO REPLY -->
     
-    <button>reply</button>  
+    <button><i class="fas fa-reply"></i></button>  
     <button v-show="mail.isRead" @click="toggleRead"><i class="fas fa-envelope"></i></button>
     <button v-show="!mail.isRead" @click="toggleRead"><i class="fas fa-envelope-open"></i></button>
     <!-- TO DO Merg with Note -->
     <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
-    <button @click="deleteMail">delete</button>
+    <button @click="deleteMail"><i class="fas fa-trash-alt"></i></button>
         </div>
         <div class="mail-details-body">
             <p>{{mail.info.txt}}</p>
@@ -55,9 +56,37 @@ export default {
   },
   created() {},
   methods: {
-    sendToNote() {},
+    sendToNote() {
+        
+        let type = null
+        let title = ''
+        let content = ''
+       
+        
+        if(this.mail.info.txt)  {
+            type = 'note-txt'
+            content = this.mail.info.txt
+        }
+        if(this.mail.info.imgUrl)
+        {
+            type = 'note-img'
+            content = this.mail.info.imgUrl
+        } 
+        //When vids added
+        // if(this.mail.info.vidUrl) {
+        //     type = 'note-vid' 
+        //     content = this.mail.info.vidUrl
+        // } 
+    
+        if(this.mail.title) title = this.mail.title
+        let query = `new/?type=${type}&content=${content}&title=${title}`
+        this.$router.push({ name: 'note', query:{type,content,title}})
+
+    },
     starMail() {
       this.mail.isStared = !this.mail.isStared
+     
+      mailService.put(this.mail)
     },
     deleteMail() {
       mailService
@@ -92,13 +121,20 @@ export default {
       let date = new Date(this.mail.sentAt)
       return date.toUTCString()
     },
+    fullStar(){
+        
+        return {full : this.mail.isStared}
+    }
   },
 
   watch: {
     '$route.params.mailId': {
       handler() {
+          
         if (this.$route.params.mailId === ':mailId') return
+       if(this.$route.params.mailId === 'compose') return
         const { mailId } = this.$route.params
+       
         mailService.getById(mailId).then((mail) => {
           if (!mail.isRead) eventBus.$emit('unreadChange', -1)
           mail.isRead = true

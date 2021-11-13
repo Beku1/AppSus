@@ -86,4 +86,26 @@ export default {
     },
   },
   computed: {},
+  watch:{
+    '$route.params': {
+      handler() {
+        //BUG Can be duplicated if you dont change URL
+              if(!this.$route.query.type) return
+
+              let query = this.$route.query
+              let type = query.type
+
+   
+              if(type === 'note-txt') noteServies.createNewNoteTxt(query.content,query.title)
+              if(type === 'note-img') noteServies.createNewNoteImg(query.content,query.title) 
+                
+              this.$nextTick(()=>{
+                this.loadNotes()
+              })
+              
+              
+      },
+      immediate : true,
+    },
+  }
 };

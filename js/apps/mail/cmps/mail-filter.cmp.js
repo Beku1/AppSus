@@ -38,14 +38,15 @@ export default {
      filterBy:{
          read:'',
          txt:null,
+         folder:'inbox'
          
      },
      sortBy:{
          type:'date',
          isBackwards:false
      },
-     isSortDateBackwards:false,
-     isSortTitleBakwards:false
+     isSortDateBackwards:true,
+     isSortTitleBakwards:true
      }
     },
     created(){
@@ -68,11 +69,12 @@ export default {
              this.isSortTitleBakwards = !this.isSortTitleBakwards
          }
          else {
+            
             this.sortBy.isBackwards = this.isSortDateBackwards
-             this.isSortDateBackwards = !this.isSortDateBackwards
+            this.isSortDateBackwards = !this.isSortDateBackwards
          } 
-         
-         this.$emit('sortBy',this.sortBy)
+        
+         this.$emit('sorted',this.sortBy)
         
      }
     },

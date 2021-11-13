@@ -18,7 +18,7 @@ export const mails =[
     sentAt: 1551133930594,
     to: "you@are.amazaing.com",
     from:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    status: "sent",
    },
    {
     id: "e102",
@@ -29,11 +29,11 @@ export const mails =[
     },
     labels: ["important", "romantic"],
     isRead: false,
-    isStared: false,
+    isStared: true,
     sentAt: 1551133930594,
     to: "momo@momo.com",
     frmo:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    status: "sent",
   },
    {
     id: "e103",
@@ -50,7 +50,7 @@ export const mails =[
     sentAt: 1551133930594,
     to: "user@appsus.com",
     from:"agent47@hitmans.com",
-    status: "inbox || sent || trash || draft",
+    status: "inbox",
   },
   {
     id: "e104",
@@ -63,11 +63,11 @@ export const mails =[
     },
     labels: ["important", "romantic"],
     isRead: false,
-    isStared: false,
+    isStared: true,
     sentAt: 1551133930594,
     to: "detective@realationships.com",
     from:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    status: "sent",
   },
   {
     id: "e105",
@@ -82,7 +82,7 @@ export const mails =[
     sentAt: 1551133930594,
     to: "me@you.com",
     from:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    status: "trash",
   },
   {
     id: "e106",
@@ -98,7 +98,7 @@ export const mails =[
     sentAt: 1551133930594,
     to: "user@appsus.com",
     from:"you@me.com",
-    status: "inbox || sent || trash || draft",
+    status: "inbox",
   },
   
   {
@@ -116,7 +116,7 @@ export const mails =[
     sentAt: 1551133930594,
     to: "idk@isitrue.com",
     from:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    status: "sent",
   },
   {
     id: "testdummy",
@@ -132,8 +132,8 @@ export const mails =[
     isStared: false,
     sentAt: 1551133930594,
     to: "test@test.com",
-    from:"user@appsus.com",
-    status: "inbox || sent || trash || draft",
+    from:"test@test.com",
+    status: "inbox",
   }
   
 

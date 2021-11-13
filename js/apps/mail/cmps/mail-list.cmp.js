@@ -10,7 +10,7 @@ export default {
     template:`
      <section class="mail-list-main">
          <div v-for="mail in mails" :key="mail.id" class="mail-preview">
-         <router-link  :to="'/mail/'+mail.id"><mail-preview :mail="mail"/></router-link>
+         <router-link  :to="'/mail/details/'+mail.id"><mail-preview :mail="mail"/></router-link>
         </div>
      </section>
     `,
@@ -23,10 +23,10 @@ export default {
         }
     },
     created(){
-        eventBus.$on('sortBy',this.mailSortBy)
+        // eventBus.$on('sortBy',this.mailSortBy)
     },
     destroyed(){
-        eventBus.$off('sortBy')
+        // eventBus.$off('sortBy')
     },
     methods:{
      mailsortBy(sortBy){

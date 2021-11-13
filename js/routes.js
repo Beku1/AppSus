@@ -19,16 +19,31 @@ const routes = [
   {
     path: '/mail',
     component: mailApp,
-
+    children:[
+      {
+        path:'compose/:type?:content?:title?',
+        // path:'compose/:objStr?',
+        component:mailCompose
+      }
+    ]
+  
   },
   {
-    path: '/mail/:mailId?',
+    path: '/mail/details/:mailId?',
     component: mailDetails,
     
   },
   {
     path: '/note',
+    name:'note',
     component: noteAppCmp,
+    children:[
+      {
+        path:'new/:type?:content?:title?',
+       
+      }
+      
+    ]
   },
   // {
   //     path: '/books',

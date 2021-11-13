@@ -71,12 +71,13 @@ function createNote() {
   ];
 }
 
-function createNewNoteTxt(txt) {
+function createNewNoteTxt(txt,title = '') {
   let noteTxt = {
     type: "note-txt",
     isPinned: false,
     info: {
       txt,
+      title
     },
     createdAt: getDate(Date.now()),
     style: {

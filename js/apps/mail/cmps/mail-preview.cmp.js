@@ -2,10 +2,11 @@
 export default {
 props:['mail'],
 template:`
-    <section class="mail-preview-main" :class="isUnreadMail">
-        <p class="mail-preview-title">{{mail.title}}</p>
-        <p class="mail-preview-txt">{{showTxt}}</p>
+    <section  class="mail-preview-main" :class="isUnreadMail">
+        <p class="mail-preview-title"><span v-if="isDraft">Draft Title: </span>{{mail.title}}</p>
+        <p class="mail-preview-txt"><span v-if="isDraft">Draft Text:</span>{{showTxt}}</p>
     </section>
+    
 `,
 computed:{
     showTxt(){
@@ -14,6 +15,9 @@ computed:{
     },
     isUnreadMail(){
      return {unread: !this.mail.isRead}
+    },
+    isDraft(){
+        return this.mail.status === 'draft'
     }
 }
 }
