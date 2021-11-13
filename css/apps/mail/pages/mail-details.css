@@ -1,5 +1,7 @@
 .mail-details{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 
@@ -15,9 +17,28 @@
     padding:0 100px;
 }
 
+.mail-details-main-container{
+    width:100%;
+}
+
+.mail-details-body-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.mail-details-body-vid{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
 .mail-details-info{
-    display:flex;
+    display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
     
 }
 .mail-details-info button{

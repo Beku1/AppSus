@@ -14,7 +14,7 @@ export default {
         <div>
         <mail-folder-list :mail="mail"/>
         </div>
-        <div>
+        <div class="mail-details-main-container">
           <div class="mail-details-header" >
             <h3>{{mail.title}} </h3>
             
@@ -26,6 +26,7 @@ export default {
                 <span > From: {{mail.from}}</span><span>To: {{mail.to}}</span>
               </div>
               <p> {{whenSent}} </p>
+              <div class="mail-details-btns">
               <button title="Star this mail" @click="starMail" ><i class="fas fa-star" v-bind:class="fullStar"></i></i></i></button>
               
               
@@ -35,6 +36,7 @@ export default {
               
               <button @click="sendToNote"><i class="fab fa-telegram-plane"></i></button>
               <button @click="deleteMail"><i class="fas fa-trash-alt"></i></button>
+</div>
             </div>
             <div class="mail-details-body">
               <p>{{mail.info.txt}}</p>
@@ -56,7 +58,9 @@ export default {
       isLabeled: false,
     }
   },
-  created() {},
+  created() {
+      eventBus.$emit('unreadCount')
+  },
   methods: {
     sendToNote() {
         

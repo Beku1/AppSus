@@ -13,7 +13,7 @@ export default {
           <div class="app-header-links">      
               <router-link to="/book"><i class="fas fa-book"></i></router-link> 
               <router-link to="/note"><i class="fas fa-sticky-note special"></i></i></router-link>
-              <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope special"></i><span class="mail-unread">{{unreadCount}}</span></div></router-link>
+              <router-link to="/mail"><div class="app-header-mail"><i class="fas fa-envelope special"></i><span class="mail-unread">{{unreadCounter}}</span></div></router-link>
           </div>   
           <div class="app-header-about">   
             <router-link to="/about"><i class="fas fa-address-card"></i></router-link>
@@ -25,7 +25,7 @@ export default {
       data(){
         return{
           img:'..',
-          unreadCount:null
+          unreadMailsCount:null
         }
       },
     created() {
@@ -33,7 +33,7 @@ export default {
      .then((count)=>{
        this.getUnread(count)
      })
-       eventBus.$on('unreadCount',this.getUnread)
+       eventBus.$on('unreadCount',this.countAgain)
        eventBus.$on('unreadChange',this.unreadChange)
     },
     destroyed(){
@@ -42,10 +42,23 @@ export default {
     },
     methods:{
       getUnread(unreadCount){
-        this.unreadCount = unreadCount 
+        
+        this.unreadMailsCount = unreadCount 
+      },
+      countAgain(){
+        basicStorageService.getUnreadCount()
+        .then((count)=>{
+          this.getUnread(count)
+        })
       },
       unreadChange(count){
-        this.unreadCount += count
+        this.unreadMailsCount += count
+      }
+      
+    },
+    computed:{
+      unreadCounter(){
+        return this.unreadMailsCount
       }
       
     }

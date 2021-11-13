@@ -48,12 +48,11 @@ export default {
      .then((count)=>{
        this.getUnread(count)
      })
-       eventBus.$on('unreadCount',this.getUnread)
-       eventBus.$on('unreadChange',this.unreadChange)
+       eventBus.$on('unreadCountInbox',this.getUnread)
+       
     },
     destroyed(){
         eventBus.$off('unreadCount')
-        eventBus.$off('unreadChange')
     },
     methods:{
     openCompose(){
