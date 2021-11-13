@@ -71,11 +71,24 @@ function createNote() {
       },
       createdAt: getDate(Date.now()),
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#d7aefb",
       },
     },
     {
-      id: "n101",
+      id: "n110",
+      type: "note-txt",
+      isPinned: false,
+      info: {
+        txt: "דאטה זאת פונקציה שמחזירה אובייקט - אורי.ש",
+        title:'?מה זה דאטה'
+      },
+      createdAt: getDate(Date.now()),
+      style: {
+        backgroundColor: "#fff475",
+      },
+    },
+    {
+      id: "n105",
       type: "note-txt",
       isPinned: false,
       info: {
@@ -84,7 +97,7 @@ function createNote() {
       },
       createdAt: getDate(Date.now()),
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#a7ffeb",
       },
     },
     {
@@ -96,12 +109,12 @@ function createNote() {
         title: "Reality",
       },
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#f28b82",
       },
       createdAt: getDate(Date.now()),
     },
     {
-      id: "n102",
+      id: "n106",
       type: "note-img",
       isPinned: false,
       info: {
@@ -109,12 +122,12 @@ function createNote() {
         title: "Amazing Team",
       },
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#ccff90",
       },
       createdAt: getDate(Date.now()),
     },
     {
-      id: "n102",
+      id: "n108",
       type: "note-img",
       isPinned: false,
       info: {
@@ -122,7 +135,7 @@ function createNote() {
         title: "Full Stack Job",
       },
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#ccff90",
       },
       createdAt: getDate(Date.now()),
     },
@@ -143,7 +156,7 @@ function createNote() {
       },
       createdAt: getDate(Date.now()),
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#d7aefb",
       },
     },
     {
@@ -156,7 +169,7 @@ function createNote() {
         title: "Bobi and Me",
       },
       style: {
-        backgroundColor: "white",
+        backgroundColor: "#fff475",
       },
       createdAt: getDate(Date.now()),
     },
