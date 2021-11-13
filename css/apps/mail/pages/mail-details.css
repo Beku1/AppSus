@@ -40,6 +40,8 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    text-align: center;
+    padding:0 15px;
     
 }
 .mail-details-info button{
@@ -48,6 +50,9 @@
 
 }
 
+.mail-details-body p{
+    padding:0 15px;
+}
 
 .mail-details-body-img img{
     width:400px;

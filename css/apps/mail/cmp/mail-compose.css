@@ -77,3 +77,33 @@
   border: 0;
   text-align: center;
 }
+
+
+
+@media (max-width:600px){
+    .mail-compose-main {
+        
+        width: 425px;
+        height: 350px;
+      
+      }
+      .mail-compose-modal textarea {
+       
+        height: 18vh;
+      }
+}
+
+@media(max-width:450px){
+    .mail-compose-main {
+        
+        width: 350px;
+        height: 300px;
+      
+      }
+      .mail-compose-modal textarea {
+       
+        height: 13vh;
+      }
+
+
+}
