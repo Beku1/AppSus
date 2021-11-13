@@ -6,3 +6,19 @@
   width: 100%;
   padding-inline-end: 30px;
 }
+
+
+@media (max-width:935px){
+    .mail-app-main {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 15px;
+    
+      }
+      .mail-app-filters {
+        width: 100%;
+        padding-inline-end: 30px;
+      }
+}

@@ -6,12 +6,14 @@ export default {
     props:['mail'],
 
 template:`
+
 <div class="mail-preview-toolbar">
 <button @click.prevent="deleteMail" class="no-border-icons"><i class="fas fa-trash-alt "></i></button>
 <button title="Make it read" v-show="mail.isRead" @click.prevent="toggleRead" class="no-border-icons"><i class="fas fa-envelope "></i></button>
     <button title="Make it unread" v-show="!mail.isRead" @click.prevent="toggleRead" class="no-border-icons"><i class="fas fa-envelope-open "></i></button>
 
 </div>
+
 `,
 data(){
     return{

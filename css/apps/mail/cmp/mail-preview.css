@@ -46,6 +46,7 @@
 .mail-preview-date{
     color:black;
     font-weight: 600;
+    
 }
 
 .mail-preview-main:not(.unread){
