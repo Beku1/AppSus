@@ -66,8 +66,21 @@ function createNote() {
       type: "note-txt",
       isPinned: false,
       info: {
-        txt: "Fullstack Me Baby!",
-        title:'something'
+        txt: "With great power comes great responsibility",
+        title:'Quote that spiderman stole from me'
+      },
+      createdAt: getDate(Date.now()),
+      style: {
+        backgroundColor: "white",
+      },
+    },
+    {
+      id: "n101",
+      type: "note-txt",
+      isPinned: false,
+      info: {
+        txt: "The problem is not the problem the problem is your attitude about the problem",
+        title:'Problems'
       },
       createdAt: getDate(Date.now()),
       style: {
@@ -79,8 +92,34 @@ function createNote() {
       type: "note-img",
       isPinned: false,
       info: {
-        imgUrl: "https://www.yo-yoo.co.il/coolpics/images/uploads/4c8498.jpeg",
-        title: "Bobi and Me",
+        imgUrl: "https://www.meme-arsenal.com/memes/4dc5c2c0a73fb9ec553c3f93703a02ad.jpg",
+        title: "Reality",
+      },
+      style: {
+        backgroundColor: "white",
+      },
+      createdAt: getDate(Date.now()),
+    },
+    {
+      id: "n102",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://img.devrant.com/devrant/rant/r_2028937_r7QZN.jpg",
+        title: "Amazing Team",
+      },
+      style: {
+        backgroundColor: "white",
+      },
+      createdAt: getDate(Date.now()),
+    },
+    {
+      id: "n102",
+      type: "note-img",
+      isPinned: false,
+      info: {
+        imgUrl: "https://c.tenor.com/G5aS0iH1jNUAAAAC/%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA-%D1%82%D0%BE%D0%BC%D0%B8%D0%B4%D0%B6%D0%B5%D1%80%D0%B8.gif",
+        title: "Full Stack Job",
       },
       style: {
         backgroundColor: "white",
