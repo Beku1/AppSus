@@ -1,6 +1,6 @@
 const IMG_URL= 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=0.672xw:1.00xh;0.166xw,0&resize=640:*'
 
-const VIDEO_URL = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+const VIDEO_URL = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 
 export const mails =[
    {
@@ -89,7 +89,7 @@ export const mails =[
     title: "just joking",
     info: {
       txt: "Everything above is a lie! ",
-      vidUrl:"http://www.youtube.com/embed/8DXHthAxiWs",
+      vidUrl:"https://www.youtube.com/embed/8DXHthAxiWs",
       
     },
     labels: ["important", "romantic"],
@@ -119,22 +119,67 @@ export const mails =[
     status: "sent",
   },
   {
-    id: "testdummy",
-    title: "I am a test dummy! IM SUPPOSED TO BE BROKEN",
+    id: "e222",
+    title: "Welcome to AppSus",
     info: {
-      txt: "Fullstack Me Baby!",
-      imgUrl: "http://some-img/me",
-      vidUrl: "http://some-vid/me",
-     
+      txt: "Hope you enjoy your stay , In the place where you have everything in one spot",
     },
     labels: ["important", "romantic"],
     isRead: false,
     isStared: false,
     sentAt: 1551133930594,
-    to: "test@test.com",
-    from:"test@test.com",
+    to: "user@appsus.com",
+    from:"appsus@appsus.com",
     status: "inbox",
-  }
+  },{
+    id: "e107",
+    title: "Hi, It\'s matt",
+    info: {
+      txt: "Whats up!! would love to catch up with you again.  ",
+      imgUrl: IMG_URL,
+      vidUrl: VIDEO_URL,
+    
+    },
+    labels: ["important", "romantic"],
+    isRead: false,
+    isStared: false,
+    sentAt: 1551133930594,
+    to: "idk@isitrue.com",
+    from:"user@appsus.com",
+    status: "inbox",
+  },{
+    id: "e107",
+    title: "Daniel IS THE KING OF CSS",
+    info: {
+      txt: "The title is true",
+      imgUrl: IMG_URL,
+      vidUrl: VIDEO_URL,
+    
+    },
+    labels: ["important", "romantic"],
+    isRead: false,
+    isStared: false,
+    sentAt: 1551133930594,
+    to: "idk@isitrue.com",
+    from:"user@appsus.com",
+    status: "inbox",
+  },{
+    id: "e107",
+    title: "Beny is the king of FUNCTIONALITY",
+    info: {
+      txt: "The title is true ",
+      imgUrl: IMG_URL,
+      vidUrl: VIDEO_URL,
+    
+    },
+    labels: ["important", "romantic"],
+    isRead: false,
+    isStared: false,
+    sentAt: 1551133930594,
+    to: "idk@isitrue.com",
+    from:"user@appsus.com",
+    status: "inbox",
+  },
   
 
  

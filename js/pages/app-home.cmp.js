@@ -3,9 +3,9 @@ export default {
              <section class="home-page">
             <div class="home-page-hero">
             
- <h1>Welcome To </h1><span> <img class="icon-home-page" src="./../../img/icon.png"/></span>
-              <p>One place For anything you need</p>
-              <router-link :to="{path:'mail/compose/',query:{type:'txt',content:'yabadabadu',title:'aha'}}">CLICK ME</router-link>
+ <h3>Welcome To </h3><span> <img class="icon-home-page" src="../../img/icon.png"/></span>
+              <h2>One place For anything you need</h2>
+              
             </div>
         </section>
       `,
